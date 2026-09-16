@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CYAN NOTICE · CYAN GROUP</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --group: #1645C6;
+      --pharma: #000047;
+      --bio: #0095B6;
+      --meditech: #5D8AA8;
+      --medical: #76ABDF;
+
+      --text: #202633;
+      --subtext: #737b89;
+      --line: #e5e9f0;
+      --soft-line: #eef1f5;
+      --background: #ffffff;
+      --soft-background: #f7f9fc;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        Arial,
+        "Pretendard",
+        "Noto Sans KR",
+        "Malgun Gothic",
+        sans-serif;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0 48px;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .brand-logo {
+      display: block;
+      width: min(310px, 72vw);
+      height: auto;
+      margin: 0 auto 28px;
+    }
+
+    .header-title {
+      margin: 0;
+      color: #172033;
+      font-size: 29px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .header-subtitle {
+      margin-top: 9px;
+      color: #8a93a2;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+    }
+
+    .internal-label {
+      display: inline-block;
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px solid #dce2eb;
+      color: #9aa2af;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+    }
+
+    /* =========================
+       SECTION HEADER
+    ========================= */
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    .section-title-wrap {
+      min-width: 0;
+    }
+
+    .section-kicker {
+      margin-bottom: 7px;
+      color: var(--group);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-description {
+      margin: 8px 0 0;
+      color: var(--subtext);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .back-link {
+      flex: 0 0 auto;
+      border: 0;
+      background: transparent;
+      color: #727b89;
+      padding: 4px 0;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+
+    .back-link:hover {
+      color: var(--group);
+    }
+
+    /* =========================
+       TOOLBAR
+    ========================= */
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid #ccd4e0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .filter-button {
+      min-width: 58px;
+      height: 34px;
+      padding: 0 13px;
+      border: 1px solid #dfe4ec;
+      border-radius: 5px;
+      background: #fff;
+      color: #697281;
+      font-size: 11px;
+      font-weight: 700;
+      transition:
+        border-color 0.18s ease,
+        background 0.18s ease,
+        color 0.18s ease;
+    }
+
+    .filter-button:hover {
+      border-color: #b8c5df;
+      color: var(--group);
+    }
+
+    .filter-button.active {
+      border-color: var(--group);
+      background: var(--group);
+      color: #fff;
+    }
+
+    .search-box {
+      display: flex;
+      flex: 0 0 300px;
+      height: 36px;
+      border: 1px solid #dfe4ec;
+      border-radius: 5px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .search-box:focus-within {
+      border-color: #9fb2e3;
+    }
+
+    .search-input {
+      min-width: 0;
+      flex: 1;
+      border: 0;
+      outline: 0;
+      padding: 0 12px;
+      background: transparent;
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .search-input::placeholder {
+      color: #a7aeba;
+    }
+
+    .search-button {
+      width: 42px;
+      border: 0;
+      border-left: 1px solid #edf0f4;
+      background: #fff;
+      color: #737d8d;
+      font-size: 14px;
+    }
+
+    .search-button:hover {
+      background: var(--soft-background);
+      color: var(--group);
+    }
+
+    /* =========================
+       NOTICE TABLE
+    ========================= */
+
+    .notice-board {
+      margin-top: 0;
+    }
+
+    .notice-header,
+    .notice-row {
+      display: grid;
+      grid-template-columns: 74px 92px minmax(0, 1fr) 132px 112px 82px;
+      align-items: center;
+    }
+
+    .notice-header {
+      min-height: 45px;
+      border-bottom: 1px solid #ccd4e0;
+      background: #fafbfd;
+      color: #7c8593;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    .notice-row {
+      position: relative;
+      min-height: 66px;
+      border-bottom: 1px solid var(--soft-line);
+      transition: background 0.16s ease;
+    }
+
+    .notice-row:hover {
+      background: #fafbfd;
+    }
+
+    .notice-cell {
+      min-width: 0;
+      padding: 12px 10px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .notice-number {
+      color: #929aa7;
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .notice-category {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      height: 25px;
+      padding: 0 9px;
+      border: 1px solid #dfe5ee;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .category-all {
+      border-color: rgba(22, 69, 198, 0.22);
+      background: rgba(22, 69, 198, 0.055);
+      color: var(--group);
+    }
+
+    .category-group {
+      border-color: rgba(22, 69, 198, 0.22);
+      background: rgba(22, 69, 198, 0.055);
+      color: var(--group);
+    }
+
+    .category-pharma {
+      border-color: rgba(0, 0, 71, 0.18);
+      background: rgba(0, 0, 71, 0.045);
+      color: var(--pharma);
+    }
+
+    .category-bio {
+      border-color: rgba(0, 149, 182, 0.22);
+      background: rgba(0, 149, 182, 0.055);
+      color: #007d99;
+    }
+
+    .category-meditech {
+      border-color: rgba(93, 138, 168, 0.24);
+      background: rgba(93, 138, 168, 0.06);
+      color: #507b98;
+    }
+
+    .category-medical {
+      border-color: rgba(118, 171, 223, 0.32);
+      background: rgba(118, 171, 223, 0.09);
+      color: #4e84b8;
+    }
+
+    .notice-title-cell {
+      padding-left: 18px;
+      padding-right: 18px;
+      text-align: left;
+    }
+
+    .notice-title {
+      display: inline-block;
+      max-width: 100%;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #242b37;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.5;
+      text-align: left;
+      text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    .notice-title:hover {
+      color: var(--group);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .notice-department,
+    .notice-date,
+    .notice-views {
+      color: #77808e;
+      font-size: 11px;
+    }
+
+    .notice-date,
+    .notice-views {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* =========================
+       EMPTY STATE
+    ========================= */
+
+    .empty-state {
+      display: none;
+      padding: 72px 20px;
+      border-bottom: 1px solid var(--line);
+      color: #929aa7;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .empty-state.show {
+      display: block;
+    }
+
+    /* =========================
+       BOARD BOTTOM
+    ========================= */
+
+    .board-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 88px;
+      border-bottom: 1px solid #ccd4e0;
+    }
+
+    .page-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 31px;
+      height: 31px;
+      border-radius: 4px;
+      background: var(--group);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      margin-top: 72px;
+      text-align: center;
+    }
+
+    .footer-text {
+      color: #9aa2af;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+    }
+
+    .division-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 150px;
+      height: 3px;
+      margin: 14px auto 0;
+      overflow: hidden;
+      border-radius: 999px;
+    }
+
+    .division-bar span:nth-child(1) {
+      background: var(--pharma);
+    }
+
+    .division-bar span:nth-child(2) {
+      background: var(--bio);
+    }
+
+    .division-bar span:nth-child(3) {
+      background: var(--meditech);
+    }
+
+    .division-bar span:nth-child(4) {
+      background: var(--medical);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 860px) {
+      .page {
+        width: min(100% - 28px, 720px);
+        padding-top: 48px;
+      }
+
+      .header {
+        margin-bottom: 48px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+      }
+
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .search-box {
+        flex-basis: auto;
+        width: 100%;
+      }
+
+      .notice-header {
+        display: none;
+      }
+
+      .notice-board {
+        border-top: 1px solid #ccd4e0;
+      }
+
+      .notice-row {
+        display: block;
+        min-height: 0;
+        padding: 18px 4px 16px;
+      }
+
+      .notice-cell {
+        padding: 0;
+        text-align: left;
+      }
+
+      .notice-number {
+        display: none;
+      }
+
+      .notice-category-cell {
+        margin-bottom: 9px;
+      }
+
+      .notice-title-cell {
+        padding: 0;
+      }
+
+      .notice-title {
+        display: block;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+      }
+
+      .notice-department,
+      .notice-date,
+      .notice-views {
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 12px;
+      }
+
+      .notice-department::before {
+        content: "작성 ";
+        color: #a1a8b3;
+      }
+
+      .notice-date::before {
+        content: "등록 ";
+        color: #a1a8b3;
+      }
+
+      .notice-views::before {
+        content: "조회 ";
+        color: #a1a8b3;
+      }
+
+      .board-bottom {
+        min-height: 72px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: calc(100% - 24px);
+        padding-top: 38px;
+      }
+
+      .brand-logo {
+        width: min(270px, 76vw);
+      }
+
+      .header-title {
+        font-size: 24px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 16px;
+      }
+
+      .filters {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .filter-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <header class="header">
+      <img
+        class="brand-logo"
+        src="https://res.cloudinary.com/qucqug6s/image/upload/v1788064891/%EB%B3%B8%EC%82%AC%EB%A1%9C%EA%B3%A0_%ED%9D%B0.png"
+        alt="CYAN GROUP"
+      >
+
+      <h1 class="header-title">CYAN NOTICE</h1>
+      <div class="header-subtitle">INTERNAL NOTICE BOARD</div>
+      <div class="internal-label">CYAN GROUP · Internal Use Only</div>
+    </header>
+
+    <section>
+      <div class="section-head">
+
+        <div class="section-title-wrap">
+          <div class="section-kicker">INTERNAL COMMUNICATION</div>
+          <h2 class="section-title">Notice</h2>
+          <p class="section-description">
+            CYAN GROUP 및 계열사 주요 공지사항을 확인할 수 있습니다.
+          </p>
+        </div>
+
+        <a class="back-link" href="intranet.html">
+          ← CYAN INTRANET
+        </a>
+
+      </div>
+
+      <div class="toolbar">
+
+        <div class="filters">
+          <button class="filter-button active" data-filter="전체">전체</button>
+          <button class="filter-button" data-filter="본사">본사</button>
+          <button class="filter-button" data-filter="제약">제약</button>
+          <button class="filter-button" data-filter="바이오">바이오</button>
+          <button class="filter-button" data-filter="메디텍">메디텍</button>
+          <button class="filter-button" data-filter="메디컬">메디컬</button>
+        </div>
+
+        <form class="search-box" id="searchForm">
+          <input
+            class="search-input"
+            id="searchInput"
+            type="search"
+            placeholder="제목 또는 작성부서 검색"
+            autocomplete="off"
+          >
+          <button class="search-button" type="submit" aria-label="검색">
+            ⌕
+          </button>
+        </form>
+
+      </div>
+
+      <div class="notice-board">
+
+        <div class="notice-header">
+          <div>No.</div>
+          <div>구분</div>
+          <div>제목</div>
+          <div>작성부서</div>
+          <div>등록일</div>
+          <div>조회</div>
+        </div>
+
+        <div id="noticeList"></div>
+
+        <div class="empty-state" id="emptyState">
+          조건에 해당하는 공지사항이 없습니다.
+        </div>
+
+      </div>
+
+      <div class="board-bottom">
+        <span class="page-number">1</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-text">
+        CYAN GROUP · INTERNAL NETWORK
+      </div>
+
+      <div class="division-bar" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const notices = [
+      {
+        id: 106,
+        category: "전사",
+        title: "2026년 하반기 임직원 건강검진 안내",
+        department: "인사팀",
+        date: "2026.09.11",
+        views: 1248
+      },
+      {
+        id: 105,
+        category: "메디컬",
+        title: "추석 연휴 의료기관 운영 안내",
+        department: "운영지원팀",
+        date: "2026.09.09",
+        views: 783
+      },
+      {
+        id: 104,
+        category: "본사",
+        title: "외부 협력사 방문 및 회의실 이용 절차 안내",
+        department: "대외협력실",
+        date: "2026.09.07",
+        views: 426
+      },
+      {
+        id: 103,
+        category: "제약",
+        title: "연구개발구역 출입 및 보안 절차 안내",
+        department: "경영지원본부",
+        date: "2026.09.04",
+        views: 592
+      },
+      {
+        id: 102,
+        category: "바이오",
+        title: "연구시설 정기 안전점검 실시 안내",
+        department: "연구지원팀",
+        date: "2026.09.02",
+        views: 347
+      },
+      {
+        id: 101,
+        category: "메디텍",
+        title: "사내 시설 및 개발장비 이용 안내",
+        department: "운영지원팀",
+        date: "2026.08.31",
+        views: 318
+      }
+    ];
+
+    const categoryClass = {
+      "전사": "category-all",
+      "본사": "category-group",
+      "제약": "category-pharma",
+      "바이오": "category-bio",
+      "메디텍": "category-meditech",
+      "메디컬": "category-medical"
+    };
+
+    const noticeList = document.getElementById("noticeList");
+    const emptyState = document.getElementById("emptyState");
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
+    const filterButtons = document.querySelectorAll(".filter-button");
+
+    let activeFilter = "전체";
+    let searchKeyword = "";
+
+    function formatViews(value) {
+      return value.toLocaleString("ko-KR");
+    }
+
+    function renderNotices() {
+      const filtered = notices
+        .filter((notice) => {
+          const categoryMatch =
+            activeFilter === "전체" ||
+            notice.category === activeFilter;
+
+          const keyword = searchKeyword.trim().toLowerCase();
+
+          const searchMatch =
+            keyword === "" ||
+            notice.title.toLowerCase().includes(keyword) ||
+            notice.department.toLowerCase().includes(keyword);
+
+          return categoryMatch && searchMatch;
+        })
+        .sort((a, b) => b.id - a.id);
+
+      noticeList.innerHTML = "";
+
+      if (filtered.length === 0) {
+        emptyState.classList.add("show");
+        return;
+      }
+
+      emptyState.classList.remove("show");
+
+      filtered.forEach((notice) => {
+        const row = document.createElement("article");
+        row.className = "notice-row";
+
+        row.innerHTML = `
+          <div class="notice-cell notice-number">
+            ${notice.id}
+          </div>
+
+          <div class="notice-cell notice-category-cell">
+            <span class="notice-category ${categoryClass[notice.category] || ""}">
+              ${notice.category}
+            </span>
+          </div>
+
+          <div class="notice-cell notice-title-cell">
+            <button
+              class="notice-title"
+              type="button"
+              data-id="${notice.id}"
+            >
+              ${notice.title}
+            </button>
+          </div>
+
+          <div class="notice-cell notice-department">
+            ${notice.department}
+          </div>
+
+          <div class="notice-cell notice-date">
+            ${notice.date}
+          </div>
+
+          <div class="notice-cell notice-views">
+            ${formatViews(notice.views)}
+          </div>
+        `;
+
+        noticeList.appendChild(row);
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+
+        filterButtons.forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+        renderNotices();
+      });
+    });
+
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      searchKeyword = searchInput.value;
+      renderNotices();
+    });
+
+    searchInput.addEventListener("input", () => {
+      searchKeyword = searchInput.value;
+      renderNotices();
+    });
+
+    noticeList.addEventListener("click", (event) => {
+      const titleButton = event.target.closest(".notice-title");
+
+      if (!titleButton) {
+        return;
+      }
+
+      /*
+        상세 공지 화면은 다음 단계에서 연결합니다.
+        현재는 목록 디자인 및 검색/필터 테스트 단계입니다.
+      */
+    });
+
+    renderNotices();
+  </script>
+
+</body>
+</html>
