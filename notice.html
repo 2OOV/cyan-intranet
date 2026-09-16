@@ -1071,7 +1071,11 @@ const detailId = Number(params.get("id"));
 if (detailId && noticeDetails[detailId]) {
   const notice = notices.find((item) => item.id === detailId);
   const detail = noticeDetails[detailId];
-
+  
+  document.querySelector(".toolbar").style.display = "none";
+  document.querySelector(".notice-header").style.display = "none";
+  document.querySelector(".board-bottom").style.display = "none";
+  
   noticeList.innerHTML = `
     <article class="notice-detail">
       <div class="notice-detail-head">
