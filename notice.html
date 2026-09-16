@@ -715,7 +715,78 @@
       border-color: #1645C6;
       color: #1645C6;
     }
+    
+    /* =========================
+       NOTICE COMMENTS
+    ========================= */
 
+    .notice-comments {
+      padding: 32px 0 0;
+      border-top: 1px solid #e5e9f0;
+    }
+
+    .notice-comments-title {
+      margin-bottom: 24px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #273142;
+    }
+
+    .notice-comments-title span {
+      margin-left: 5px;
+      color: #1645C6;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .notice-comment {
+      padding: 0 0 24px;
+    }
+
+    .notice-comment + .notice-comment {
+      padding-top: 24px;
+      border-top: 1px solid #edf0f4;
+    }
+
+    .notice-comment-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .notice-comment-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #26303d;
+    }
+
+    .notice-comment-info {
+      font-size: 11px;
+      color: #929aa7;
+    }
+
+    .notice-comment-content {
+      font-size: 13px;
+      line-height: 1.75;
+      color: #4b5563;
+      word-break: keep-all;
+    }
+
+    .notice-comment-replies {
+      margin-top: 18px;
+      margin-left: 28px;
+      padding-left: 18px;
+      border-left: 2px solid #eef1f5;
+    }
+
+    .notice-comment-replies .notice-comment {
+      padding-bottom: 18px;
+    }
+
+    .notice-comment-replies .notice-comment:last-child {
+      padding-bottom: 0;
+    }
+    
     @media (max-width: 720px) {
       .notice-detail-head {
         padding: 26px 20px 24px;
@@ -932,8 +1003,79 @@
         </p>
 
         <p>문의 │ CYAN GROUP 인사팀</p>
-      `
+      `,
+
+     comments: [
+    {
+      name: "강우진",
+      organization: "CYAN PHARMA · 글로벌사업본부",
+      position: "과장",
+      date: "09.11 14:17",
+      content: "검진 전날 저녁 일정이 있는데 금식 시간만 지키면 되는 겁니까.",
+      replies: [
+        {
+          name: "차이겸",
+          organization: "CYAN PHARMA · 전략사업본부",
+          position: "차장",
+          date: "09.11 14:21",
+          content: "검진 전날 회식은 검진 항목에 포함되지 않는 것으로 알고 있습니다.",
+          replies: [
+            {
+              name: "윤이안",
+              organization: "CYAN MEDICAL · 성하대학교병원 · 순환기내과",
+              position: "MD",
+              date: "09.11 14:28",
+              content: "포함은 안 되는데 결과에는 포함될 수 있습니다. 예약 후 안내되는 금식 시간은 지켜주세요."
+            }
+          ]
+        }
+      ]
     },
+
+    {
+      name: "오재현",
+      organization: "CYAN MEDITECH · AI솔루션팀",
+      position: "주임",
+      date: "09.11 15:04",
+      content: "성하대학교병원으로 신청하면 임직원 전용 접수 창구가 따로 있나요.",
+      replies: [
+        {
+          name: "강도연",
+          organization: "CYAN MEDITECH · 임상개발팀",
+          position: "PM",
+          date: "09.11 15:11",
+          content: "지난번에는 일반 검진 접수로 안내받았습니다. 혹시 변경됐으면 인사팀 확인 부탁드립니다."
+        }
+      ]
+    },
+
+    {
+      name: "함해솔",
+      organization: "CYAN BIO · 플랫폼연구실",
+      position: "책임연구원",
+      date: "09.11 16:02",
+      content: "신청 화면에 오전 시간만 남아 있는데 추가 일정이 열릴 예정인가요.",
+      replies: [
+        {
+          name: "백도윤",
+          organization: "CYAN BIO · 플랫폼연구실",
+          position: "선임연구원",
+          date: "09.11 16:07",
+          content: "함 책임님, 일단 남은 시간부터 잡으세요. 추가 일정 기다리다 11월 됩니다."
+        }
+      ]
+    },
+
+    {
+      name: "윤지혁",
+      organization: "CYAN GROUP · 그룹전략기획실",
+      position: "차장",
+      date: "09.11 17:34",
+      content: "예약 변경 가능 기간도 신청 화면에 함께 표기해주시면 좋겠습니다.",
+      replies: []
+    }
+  ]
+},
 
   105: {
     content: `
@@ -973,6 +1115,41 @@
       </p>
 
       <p>문의 │ CYAN MEDICAL 운영지원팀</p>
+    `
+  },
+
+  102: {
+    content: `
+      <p>
+        연구시설의 안전한 운영 및 사고 예방을 위해 정기 안전점검을 아래와 같이 실시하오니,
+        해당 부서 임직원께서는 점검 일정 및 유의사항을 확인하여 주시기 바랍니다.
+      </p>
+
+      <h3>■ 점검 일시</h3>
+      <p>2026.09.07 / 09:00 ~ 17:00</p>
+
+      <h3>■ 점검 대상</h3>
+      <p>CYAN BIO 연구시설 및 공용 실험공간</p>
+
+      <h3>■ 주요 점검 항목</h3>
+      <p>연구장비 및 전기설비 상태</p>
+      <p>시약·화학물질 보관 및 관리 상태</p>
+      <p>비상설비 및 안전장비 관리 상태</p>
+      <p>연구공간 내 안전수칙 준수 여부</p>
+
+      <h3>■ 협조사항</h3>
+      <p>
+        점검 전 개인 실험공간 및 공용 연구장비 주변을 정리하여 주시기 바라며,
+        점검 시간 중 일부 연구장비 및 시설 이용이 제한될 수 있습니다.
+      </p>
+
+      <h3>■ 유의사항</h3>
+      <p>
+        점검 과정에서 안전상 조치가 필요한 사항이 확인될 경우
+        현장 조치 또는 추가 점검이 진행될 수 있습니다.
+      </p>
+
+      <p>문의 │ CYAN BIO 연구지원팀</p>
     `
   }
   };
@@ -1108,6 +1285,52 @@
     window.location.href = `notice.html?id=${noticeId}`;
     });
 
+function countComments(comments = []) {
+  return comments.reduce((total, comment) => {
+    return total + 1 + countComments(comment.replies || []);
+  }, 0);
+}
+
+function renderCommentItems(comments = []) {
+  return comments.map((comment) => `
+    <div class="notice-comment">
+      <div class="notice-comment-header">
+        <span class="notice-comment-name">${comment.name}</span>
+        <span class="notice-comment-info">
+          ${comment.organization}${comment.position ? ` · ${comment.position}` : ""}
+        </span>
+        <span class="notice-comment-info">${comment.date}</span>
+      </div>
+
+      <div class="notice-comment-content">
+        ${comment.content}
+      </div>
+
+      ${comment.replies?.length ? `
+        <div class="notice-comment-replies">
+          ${renderCommentItems(comment.replies)}
+        </div>
+      ` : ""}
+    </div>
+  `).join("");
+}
+
+function renderComments(comments = []) {
+  if (!comments.length) {
+    return "";
+  }
+
+  return `
+    <section class="notice-comments">
+      <div class="notice-comments-title">
+        COMMENTS <span>${countComments(comments)}</span>
+      </div>
+
+      ${renderCommentItems(comments)}
+    </section>
+  `;
+}
+    
 const params = new URLSearchParams(window.location.search);
 const detailId = Number(params.get("id"));
 
@@ -1139,6 +1362,9 @@ if (detailId && noticeDetails[detailId]) {
         ${detail.content}
       </div>
 
+
+      ${renderComments(detail.comments)}
+      
       <div class="notice-detail-footer">
         <a href="notice.html">← 목록으로</a>
       </div>
