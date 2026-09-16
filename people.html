@@ -172,6 +172,31 @@
       color: #ffffff;
     }
 
+    .filter-button[data-affiliate="ALL"].active,
+    .filter-button[data-affiliate="GROUP"].active {
+      border-color: #1645C6;
+      background: #1645C6;
+   }
+
+    .filter-button[data-affiliate="PHARMA"].active {
+      border-color: #000047;
+      background: #000047;
+   }
+
+    .filter-button[data-affiliate="BIO"].active {
+      border-color: #0095B6;
+      background: #0095B6;
+   }
+
+    .filter-button[data-affiliate="MEDITECH"].active {
+      border-color: #5D8AA8;
+      background: #5D8AA8;
+   }
+
+    .filter-button[data-affiliate="MEDICAL"].active {
+      border-color: #76ABDF;
+      background: #76ABDF;
+   }
 
     /* DIRECTORY GUIDE */
 
@@ -304,6 +329,25 @@
       letter-spacing: 0.1em;
     }
 
+    .affiliate-heading[data-affiliate="GROUP"] {
+      color: #1645C6;
+    }
+
+    .affiliate-heading[data-affiliate="PHARMA"] {
+      color: #000047;
+    }
+
+    .affiliate-heading[data-affiliate="BIO"] {
+      color: #0095B6;
+    }
+
+    .affiliate-heading[data-affiliate="MEDITECH"] {
+      color: #5D8AA8;
+    }
+
+    .affiliate-heading[data-affiliate="MEDICAL"] {
+      color: #76ABDF;
+    }
 
     /* EMPTY RESULT */
 
@@ -755,7 +799,10 @@
         groups.map(group => `
           <section class="affiliate-group">
 
-            <div class="affiliate-heading">
+            <div
+              class="affiliate-heading"
+              data-affiliate="${group.affiliate}"
+            >
               CYAN ${group.affiliate}
             </div>
 
