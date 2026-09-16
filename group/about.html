@@ -17,6 +17,7 @@
 
     body {
       margin: 0;
+      overflow-x: hidden;
       background: #ffffff;
       color: #17191d;
       font-family:
@@ -137,6 +138,7 @@
     }
 
     .about-inner {
+      position: relative;
       width: min(1240px, calc(100% - 120px));
       margin: 0 auto;
       padding: 110px 0 140px;
@@ -161,12 +163,13 @@
     }
 
     .about-visual {
-  width: calc(100vw - 40%);
-  height: 280px;
-  margin-top: 48px;
-  margin-left: 32%;
-  overflow: hidden;
-}
+      position: absolute;
+      top: 360px;
+      left: 35%;
+      right: 0;
+      height: 300px;
+      overflow: hidden;
+    }
 
     .about-visual img {
       display: block;
@@ -174,11 +177,13 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-}
-    
+    }
+
     .about-copy {
-      max-width: 650px;
-      margin-top: -82px;
+      position: relative;
+      z-index: 2;
+      max-width: 360px;
+      margin-top: 110px;
       color: #555b63;
       font-size: 18px;
       font-weight: 400;
@@ -216,13 +221,13 @@
       }
 
       .about-hero {
-        min-height: calc(100vh - 62px);
+        min-height: auto;
         align-items: flex-start;
       }
 
       .about-inner {
         width: calc(100% - 48px);
-        padding: 100px 0 110px;
+        padding: 100px 0 80px;
       }
 
       .eyebrow {
@@ -235,8 +240,19 @@
         line-height: 1.05;
       }
 
-      .about-copy {
+      .about-visual {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: calc(100% + 24px);
+        height: 220px;
         margin-top: 42px;
+      }
+
+      .about-copy {
+        max-width: 100%;
+        margin-top: 36px;
         font-size: 16px;
         line-height: 1.85;
       }
@@ -259,6 +275,11 @@
       .about-inner {
         width: calc(100% - 40px);
         padding-top: 80px;
+      }
+
+      .about-visual {
+        width: calc(100% + 20px);
+        height: 190px;
       }
     }
   </style>
@@ -342,15 +363,15 @@
           <img
             src="https://res.cloudinary.com/qucqug6s/image/upload/v1789561622/ChatGPT_Image_2026%EB%85%84_9%EC%9B%94_16%EC%9D%BC_%EC%98%A4%ED%9B%84_09_24_50.png"
             alt=""
-  >
-</div>
+          >
+        </div>
 
-<div class="about-copy">
-  <p>
-    제약에서 바이오, 의료기술에서 의료현장까지.<br>
-    CYAN GROUP은 연구와 기술, 의료를 연결해 더 나은 가능성을 만들어갑니다.
-  </p>
-</div>
+        <div class="about-copy">
+          <p>
+            제약에서 바이오, 의료기술에서 의료현장까지.
+            CYAN GROUP은 연구와 기술, 의료를 연결해 더 나은 가능성을 만들어갑니다.
+          </p>
+        </div>
 
       </div>
 
