@@ -13,6 +13,7 @@
 
     html {
       scroll-behavior: smooth;
+      scrollbar-gutter: stable;
     }
 
     body {
@@ -57,7 +58,6 @@
       display: flex;
       align-items: center;
       flex-shrink: 0;
-      gap: 10px;
     }
 
     .brand-symbol {
@@ -65,14 +65,6 @@
       width: 27px;
       height: 27px;
       object-fit: contain;
-    }
-
-    .brand-name {
-      color: #1645C6;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.055em;
-      white-space: nowrap;
     }
 
 
@@ -139,8 +131,6 @@
 
     .hero {
       width: 100%;
-      overflow: hidden;
-      background: #f4f6f8;
     }
 
     .hero-image {
@@ -173,10 +163,6 @@
         width: 25px;
         height: 25px;
       }
-
-      .brand-name {
-        font-size: 13px;
-      }
     }
 
     @media (max-width: 420px) {
@@ -187,10 +173,6 @@
       .brand-symbol {
         width: 23px;
         height: 23px;
-      }
-
-      .brand-name {
-        font-size: 12px;
       }
 
       .intranet-link {
@@ -223,23 +205,23 @@
         class="global-nav"
         aria-label="Main navigation"
       >
-        <a class="nav-link" href="#about">
+        <a class="nav-link" href="group/about.html">
           ABOUT
         </a>
 
-        <a class="nav-link" href="#business">
+        <a class="nav-link" href="group/business.html">
           BUSINESS
         </a>
 
-        <a class="nav-link" href="#innovation">
+        <a class="nav-link" href="group/innovation.html">
           INNOVATION
         </a>
 
-        <a class="nav-link" href="#news">
+        <a class="nav-link" href="group/news.html">
           NEWS
         </a>
 
-        <a class="nav-link" href="#careers">
+        <a class="nav-link" href="group/careers.html">
           CAREERS
         </a>
       </nav>
