@@ -45,7 +45,9 @@
 
     /* ─────────────────────────────
        CYAN GROUP INNOVATION
-       BUSINESS 접근 금지 🔒
+       이번에는 진짜 innovation.html입니다.
+       business.html 접근 금지 🔒
+       min-height 범인 검거 완료.
     ───────────────────────────── */
 
 
@@ -143,25 +145,51 @@
 
 
     /* ─────────────────────────────
-       DESKTOP · ONE SCREEN
+       DESKTOP · EXACT ONE SCREEN
+
+       HEADER     72px
+       CONTENT    남은 영역
+       FOOTER     50px
+       ─────────────────
+       TOTAL      100vh
     ───────────────────────────── */
 
     @media (min-width: 821px) {
       html,
       body {
+        width: 100%;
         height: 100%;
         overflow: hidden;
+      }
+
+      .innovation {
+        height: calc(100vh - 122px);
+        min-height: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .innovation-inner {
+        width: min(1240px, calc(100% - 120px));
+        margin: 0 auto;
+        padding: 24px 0 20px;
+      }
+
+      .innovation-intro {
+        margin-top: 28px;
+      }
+
+      .innovation-flow {
+        margin-top: 48px;
       }
     }
 
 
     /* ─────────────────────────────
        INNOVATION
-       HEADER 72 + CONTENT + FOOTER 50
     ───────────────────────────── */
 
     .innovation {
-      min-height: calc(100vh - 122px);
       display: flex;
       align-items: center;
     }
@@ -169,7 +197,6 @@
     .innovation-inner {
       width: min(1240px, calc(100% - 120px));
       margin: 0 auto;
-      padding: 58px 0 70px;
     }
 
 
@@ -197,7 +224,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
-      margin-top: 42px;
     }
 
     .intro-lead {
@@ -227,7 +253,6 @@
       position: relative;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      margin-top: 72px;
       padding-top: 30px;
     }
 
@@ -505,6 +530,7 @@
     @media (max-width: 820px) {
       html,
       body {
+        width: auto;
         height: auto;
         overflow-x: hidden;
         overflow-y: auto;
@@ -531,6 +557,7 @@
 
       .innovation {
         min-height: 0;
+        height: auto;
         display: block;
       }
 
