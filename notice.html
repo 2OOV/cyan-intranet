@@ -601,6 +601,146 @@
         width: 100%;
       }
     }
+        /* =========================
+       NOTICE DETAIL
+       ========================= */
+
+    .notice-detail {
+      margin-top: 8px;
+      border-top: 2px solid #1645C6;
+      border-bottom: 1px solid #dfe4ec;
+      background: #ffffff;
+    }
+
+    .notice-detail-head {
+      padding: 34px 36px 30px;
+      border-bottom: 1px solid #e5e9f0;
+    }
+
+    .notice-detail-head .category-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .notice-detail-head h2 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.45;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: #111827;
+    }
+
+    .notice-detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin-top: 18px;
+      font-size: 13px;
+      color: #7a8494;
+    }
+
+    .notice-detail-meta span + span {
+      position: relative;
+    }
+
+    .notice-detail-meta span + span::before {
+      content: "";
+      position: absolute;
+      left: -11px;
+      top: 50%;
+      width: 1px;
+      height: 11px;
+      background: #d9dee7;
+      transform: translateY(-50%);
+    }
+
+    .notice-detail-body {
+      padding: 44px 36px 52px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #374151;
+      word-break: keep-all;
+    }
+
+    .notice-detail-body p {
+      margin: 0 0 24px;
+    }
+
+    .notice-detail-body h3 {
+      margin: 34px 0 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1645C6;
+    }
+
+    .notice-detail-body h3:first-child {
+      margin-top: 0;
+    }
+
+    .notice-detail-body strong {
+      font-weight: 700;
+      color: #172033;
+    }
+
+    .notice-detail-footer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 0;
+      border-top: 1px solid #e5e9f0;
+    }
+
+    .notice-detail-footer a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 92px;
+      height: 38px;
+      padding: 0 18px;
+      border: 1px solid #d7deea;
+      border-radius: 4px;
+      background: #ffffff;
+      color: #4b5563;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .notice-detail-footer a:hover {
+      border-color: #1645C6;
+      color: #1645C6;
+    }
+
+    @media (max-width: 720px) {
+      .notice-detail-head {
+        padding: 26px 20px 24px;
+      }
+
+      .notice-detail-head h2 {
+        font-size: 21px;
+      }
+
+      .notice-detail-meta {
+        gap: 6px 16px;
+      }
+
+      .notice-detail-meta span + span::before {
+        left: -8px;
+      }
+
+      .notice-detail-body {
+        padding: 32px 20px 40px;
+        font-size: 14px;
+        line-height: 1.85;
+      }
+
+      .notice-detail-footer {
+        padding: 16px 0;
+      }
+    }
   </style>
 </head>
 
@@ -753,7 +893,47 @@
         views: 318
       }
     ];
+    
+  const noticeDetails = {
+    106: {
+      content: `
+        <p>
+          임직원 여러분의 건강관리 및 질병 예방을 위해
+          <strong>2026년 하반기 임직원 건강검진</strong>을 아래와 같이 실시하오니,
+          대상 임직원께서는 기간 내 검진을 완료하여 주시기 바랍니다.
+        </p>
 
+        <h3>■ 검진 대상</h3>
+        <p>CYAN GROUP 및 전 계열사 대상 임직원</p>
+
+        <h3>■ 검진 기간</h3>
+        <p>2026.09.14 ~ 2026.11.30</p>
+
+        <h3>■ 검진 기관</h3>
+        <p>
+          CYAN MEDICAL 산하 성하대학교병원 건강검진센터 및 제휴 검진기관
+        </p>
+
+        <h3>■ 신청 방법</h3>
+        <p>
+          사내 포털 건강검진 신청 메뉴에서 희망 일정 및 검진기관 선택
+        </p>
+
+        <p>
+          <strong>※ 접속 경로 │ Quick Links → 복리후생 → 임직원 건강검진</strong>
+        </p>
+
+        <h3>■ 유의사항</h3>
+        <p>
+          검진 항목 및 예약 가능 일정은 기관별로 상이할 수 있으며,
+          예약 완료 후 안내되는 검진 전 유의사항을 반드시 확인하여 주시기 바랍니다.
+        </p>
+
+        <p>문의 │ CYAN GROUP 인사팀</p>
+      `
+    }
+  };
+    
     const categoryClass = {
       "전사": "category-all",
       "본사": "category-group",
@@ -876,13 +1056,50 @@
         return;
       }
 
-      /*
-        상세 공지 화면은 다음 단계에서 연결합니다.
-        현재는 목록 디자인 및 검색/필터 테스트 단계입니다.
-      */
+        const noticeId = Number(titleButton.dataset.id);
+
+    if (!noticeDetails[noticeId]) {
+      return;
+    }
+
+    window.location.href = `notice.html?id=${noticeId}`;
     });
 
-    renderNotices();
+const params = new URLSearchParams(window.location.search);
+const detailId = Number(params.get("id"));
+
+if (detailId && noticeDetails[detailId]) {
+  const notice = notices.find((item) => item.id === detailId);
+  const detail = noticeDetails[detailId];
+
+  noticeList.innerHTML = `
+    <article class="notice-detail">
+      <div class="notice-detail-head">
+        <span class="category-badge ${categoryClass[notice.category]}">
+          ${notice.category}
+        </span>
+
+        <h2>${notice.title}</h2>
+
+        <div class="notice-detail-meta">
+          <span>${notice.department}</span>
+          <span>${notice.date}</span>
+          <span>조회 ${notice.views.toLocaleString()}</span>
+        </div>
+      </div>
+
+      <div class="notice-detail-body">
+        ${detail.content}
+      </div>
+
+      <div class="notice-detail-footer">
+        <a href="notice.html">← 목록으로</a>
+      </div>
+    </article>
+  `;
+} else {
+  renderNotices();
+}
   </script>
 
 </body>
