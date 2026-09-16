@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CYAN GROUP · INTRANET</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
   margin:0;
   width:100%;
   height:100%;
@@ -19,98 +22,149 @@ html,body{
 body{
   min-height:100vh;
   overflow:hidden;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   background:
-    radial-gradient(circle at 50% 35%, #ffffff 0%, #f8fbfe 48%, #f2f6fa 100%);
-  font-family:Arial,"Pretendard","Noto Sans KR",sans-serif;
+    radial-gradient(
+      circle at 50% 35%,
+      #ffffff 0%,
+      #f8fbfe 48%,
+      #f2f6fa 100%
+    );
+
+  font-family:
+    Arial,
+    "Pretendard",
+    "Noto Sans KR",
+    sans-serif;
+
   color:#263746;
 }
 
-/* ───── 배경 네트워크 라인 ───── */
+
+/* ─────────────────────────────
+   BACKGROUND NETWORK
+───────────────────────────── */
 
 .network{
   position:fixed;
   inset:0;
+
   pointer-events:none;
   overflow:hidden;
+
   opacity:.9;
 }
 
 .line{
   position:absolute;
+
   height:1px;
+
   border-radius:999px;
 }
 
 .line::after{
   content:"";
+
   position:absolute;
+
   width:6px;
   height:6px;
+
   border-radius:50%;
+
   top:50%;
+
   transform:translateY(-50%);
+
   background:inherit;
-  box-shadow:0 0 0 3px rgba(255,255,255,.8);
+
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.8);
 }
 
+
 /* PHARMA */
+
 .line1{
   width:34vw;
+
   left:-7vw;
   top:20%;
+
   background:#000047;
 }
+
 .line1::after{
   right:0;
 }
 
+
 /* BIO */
+
 .line2{
   width:27vw;
+
   right:-5vw;
   top:31%;
+
   background:#0095B6;
 }
+
 .line2::after{
   left:0;
 }
 
+
 /* MEDITECH */
+
 .line3{
   width:32vw;
+
   left:-9vw;
   bottom:27%;
+
   background:#5D8AA8;
 }
+
 .line3::after{
   right:0;
 }
 
+
 /* MEDICAL */
+
 .line4{
   width:29vw;
+
   right:-7vw;
   bottom:19%;
+
   background:#76ABDF;
 }
+
 .line4::after{
   left:0;
 }
 
-/* 짧은 세로 연결선 */
+
 .vertical{
   position:absolute;
+
   width:1px;
   height:11vh;
-  background:linear-gradient(
-    to bottom,
-    rgba(22,69,198,0),
-    rgba(22,69,198,.32),
-    rgba(22,69,198,0)
-  );
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(22,69,198,0),
+      rgba(22,69,198,.32),
+      rgba(22,69,198,0)
+    );
 }
 
 .v1{
@@ -123,91 +177,130 @@ body{
   bottom:19%;
 }
 
-/* ───── 메인 ───── */
+
+/* ─────────────────────────────
+   MAIN
+───────────────────────────── */
 
 main{
   position:relative;
+
   z-index:2;
-  width:min(390px,calc(100vw - 42px));
+
+  width:min(
+    390px,
+    calc(100vw - 42px)
+  );
 }
 
-/* ───── 브랜드 ───── */
+
+/* ─────────────────────────────
+   BRAND
+───────────────────────────── */
 
 .brand{
   text-align:center;
-  margin-bottom:35px;
+
+  margin-bottom:26px;
 }
 
-.brand-mark{
-  display:flex;
-  align-items:baseline;
-  justify-content:center;
-  gap:7px;
-  color:#1645C6;
-  line-height:1;
-}
+.brand-logo{
+  display:block;
 
-.cyan{
-  font-size:31px;
-  font-weight:800;
-  letter-spacing:2px;
-}
+  width:auto;
+  max-width:245px;
+  height:54px;
 
-.group{
-  font-size:19px;
-  font-weight:700;
-  letter-spacing:4px;
+  margin:0 auto;
+
+  object-fit:contain;
 }
 
 .network-title{
-  margin-top:11px;
-  font-size:10px;
+  margin-top:9px;
+
+  font-size:9px;
   font-weight:700;
+
   letter-spacing:4px;
+
   color:#7a8997;
 }
 
-/* ───── 로그인 패널 ───── */
+
+/* ─────────────────────────────
+   LOGIN PANEL
+───────────────────────────── */
 
 .login-panel{
-  padding:28px 30px 25px;
-  background:rgba(255,255,255,.74);
-  border:1px solid rgba(93,138,168,.25);
+  padding:
+    23px
+    30px
+    21px;
+
+  background:
+    rgba(255,255,255,.76);
+
+  border:
+    1px solid
+    rgba(93,138,168,.25);
+
   border-radius:8px;
+
   box-shadow:
     0 18px 50px rgba(36,73,105,.06),
     0 2px 7px rgba(36,73,105,.03);
-  backdrop-filter:blur(8px);
+
+  backdrop-filter:
+    blur(8px);
 }
 
 .field{
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
 
 label{
   display:block;
-  margin-bottom:8px;
+
+  margin-bottom:6px;
+
   font-size:9px;
   font-weight:700;
+
   letter-spacing:1.7px;
+
   color:#697b89;
 }
 
 input{
   width:100%;
-  height:42px;
+  height:38px;
+
   padding:0 12px;
+
   outline:none;
+
   border:none;
-  border-bottom:1px solid #ccd7df;
+
+  border-bottom:
+    1px solid #ccd7df;
+
   border-radius:0;
+
   background:transparent;
+
   color:#263746;
+
   font-family:inherit;
+
   font-size:14px;
+
   letter-spacing:.6px;
+
   caret-color:#1645C6;
-  transition:border-color .18s ease;
+
+  transition:
+    border-color .18s ease;
 }
 
 input:focus{
@@ -218,19 +311,35 @@ input[type="password"]{
   letter-spacing:3px;
 }
 
+
+/* ─────────────────────────────
+   ACCESS BUTTON
+───────────────────────────── */
+
 button{
   width:100%;
-  height:43px;
-  margin-top:7px;
-  border:1px solid #1645C6;
+  height:41px;
+
+  margin-top:5px;
+
+  border:
+    1px solid #1645C6;
+
   border-radius:4px;
+
   background:#1645C6;
-  color:#fff;
+
+  color:#ffffff;
+
   font-family:inherit;
+
   font-size:10px;
   font-weight:700;
+
   letter-spacing:1.8px;
+
   cursor:pointer;
+
   transition:
     background .18s ease,
     color .18s ease,
@@ -243,37 +352,125 @@ button:hover{
 
 button:disabled{
   cursor:default;
+
   opacity:.78;
 }
 
-/* ───── 시스템 정보 ───── */
+
+/* ─────────────────────────────
+   SYSTEM STATUS
+───────────────────────────── */
 
 .system{
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   gap:7px;
-  margin-top:17px;
+
+  margin-top:14px;
+
   color:#8b9aa6;
+
   font-size:8px;
-  letter-spacing:1.3px;
+
+  letter-spacing:1.2px;
 }
 
 .status-dot{
   width:5px;
   height:5px;
+
+  flex:none;
+
   border-radius:50%;
+
   background:#0095B6;
-  box-shadow:0 0 0 3px rgba(0,149,182,.08);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(0,149,182,.08);
 }
 
-/* ───── 계열사 인디케이터 ───── */
+
+/* ─────────────────────────────
+   MOBILE ACCESS NOTICE
+───────────────────────────── */
+
+.mobile-note{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:7px;
+
+  margin:
+    15px
+    0
+    14px;
+
+  padding:
+    9px
+    10px;
+
+  border:
+    1px solid
+    rgba(22,69,198,.15);
+
+  border-radius:5px;
+
+  background:
+    rgba(255,255,255,.62);
+
+  color:#5D7190;
+
+  font-size:10px;
+  font-weight:600;
+
+  letter-spacing:.2px;
+
+  white-space:nowrap;
+}
+
+.info-icon{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:15px;
+  height:15px;
+
+  flex:none;
+
+  border:
+    1px solid
+    rgba(22,69,198,.55);
+
+  border-radius:50%;
+
+  color:#1645C6;
+
+  font-size:9px;
+  font-weight:700;
+
+  line-height:1;
+}
+
+
+/* ─────────────────────────────
+   DIVISION COLORS
+───────────────────────────── */
 
 .divisions{
   display:flex;
+
   height:2px;
-  margin-top:30px;
+
   overflow:hidden;
+
   border-radius:999px;
 }
 
@@ -281,59 +478,104 @@ button:disabled{
   flex:1;
 }
 
-.pharma{background:#000047;}
-.bio{background:#0095B6;}
-.meditech{background:#5D8AA8;}
-.medical{background:#76ABDF;}
-
-/* ───── 모바일 안내 ───── */
-
-.mobile-note{
-  margin-top:17px;
-  text-align:center;
-  font-size:8px;
-  letter-spacing:.8px;
-  color:#9aa8b2;
+.pharma{
+  background:#000047;
 }
 
-/* ───── 인증중 ───── */
+.bio{
+  background:#0095B6;
+}
+
+.meditech{
+  background:#5D8AA8;
+}
+
+.medical{
+  background:#76ABDF;
+}
+
+
+/* ─────────────────────────────
+   AUTHENTICATING
+───────────────────────────── */
 
 .loading::after{
   content:"";
+
   display:inline-block;
+
   width:8px;
+
   text-align:left;
-  animation:dots 1s steps(4,end) infinite;
+
+  animation:
+    dots 1s steps(4,end) infinite;
 }
 
 @keyframes dots{
-  0%{content:"";}
-  25%{content:".";}
-  50%{content:"..";}
-  75%,100%{content:"...";}
+
+  0%{
+    content:"";
+  }
+
+  25%{
+    content:".";
+  }
+
+  50%{
+    content:"..";
+  }
+
+  75%,
+  100%{
+    content:"...";
+  }
 }
 
-/* ───── 모바일 ───── */
+
+/* ─────────────────────────────
+   SMALL SCREEN
+───────────────────────────── */
 
 @media(max-width:600px){
+
   main{
-    width:min(360px,calc(100vw - 32px));
+    width:min(
+      360px,
+      calc(100vw - 30px)
+    );
+  }
+
+  .brand{
+    margin-bottom:24px;
+  }
+
+  .brand-logo{
+    max-width:220px;
+    height:49px;
+  }
+
+  .network-title{
+    margin-top:8px;
   }
 
   .login-panel{
-    padding:25px 23px 23px;
+    padding:
+      22px
+      23px
+      20px;
   }
 
-  .cyan{
-    font-size:27px;
-  }
+  .mobile-note{
+    padding:
+      9px
+      7px;
 
-  .group{
-    font-size:16px;
+    font-size:9.5px;
   }
 
   .line{
-    opacity:.65;
+    opacity:.6;
   }
 
   .line1,
@@ -345,35 +587,71 @@ button:disabled{
   .line4{
     width:21vw;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<div class="network" aria-hidden="true">
+
+<!-- BACKGROUND NETWORK -->
+
+<div
+  class="network"
+  aria-hidden="true"
+>
+
   <span class="line line1"></span>
+
   <span class="line line2"></span>
+
   <span class="line line3"></span>
+
   <span class="line line4"></span>
+
   <span class="vertical v1"></span>
+
   <span class="vertical v2"></span>
+
 </div>
+
+
+<!-- MAIN -->
 
 <main>
 
+
+  <!-- OFFICIAL CYAN GROUP LOGO -->
+
   <div class="brand">
-    <div class="brand-mark">
-      <span class="cyan">CYAN</span>
-      <span class="group">GROUP</span>
+
+    <img
+      class="brand-logo"
+      src="https://res.cloudinary.com/qucqug6s/image/upload/v1788064891/%EB%B3%B8%EC%82%AC%EB%A1%9C%EA%B3%A0_%ED%9D%B0.png"
+      alt="CYAN GROUP"
+    >
+
+    <div class="network-title">
+      INTERNAL NETWORK
     </div>
-    <div class="network-title">INTERNAL NETWORK</div>
+
   </div>
+
+
+  <!-- LOGIN PANEL -->
 
   <div class="login-panel">
 
+
     <div class="field">
-      <label for="employee">EMPLOYEE ID</label>
+
+      <label for="employee">
+        EMPLOYEE ID
+      </label>
+
       <input
         id="employee"
         type="text"
@@ -381,89 +659,184 @@ button:disabled{
         spellcheck="false"
         autofocus
       >
+
     </div>
 
+
     <div class="field">
-      <label for="password">PASSWORD</label>
+
+      <label for="password">
+        PASSWORD
+      </label>
+
       <input
         id="password"
         type="password"
         autocomplete="off"
       >
+
     </div>
 
-    <button id="access" type="button">
+
+    <button
+      id="access"
+      type="button"
+    >
       ACCESS INTRANET →
     </button>
 
+
     <div class="system">
+
       <span class="status-dot"></span>
-      <span>SECURE CONNECTION · INTERNAL USE ONLY</span>
+
+      <span>
+        SECURE CONNECTION · INTERNAL USE ONLY
+      </span>
+
     </div>
 
+
   </div>
 
-  <div class="divisions" aria-hidden="true">
-    <span class="pharma"></span>
-    <span class="bio"></span>
-    <span class="meditech"></span>
-    <span class="medical"></span>
-  </div>
+
+  <!-- MOBILE ACCESS NOTICE -->
 
   <div class="mobile-note">
-    MOBILE · 우측 상단 ↗ 버튼을 통해 접속
+
+    <span class="info-icon">
+      i
+    </span>
+
+    <span>
+      MOBILE ACCESS · 우측 상단 ↗ 버튼으로 접속
+    </span>
+
   </div>
+
+
+  <!-- DIVISION COLORS -->
+
+  <div
+    class="divisions"
+    aria-hidden="true"
+  >
+
+    <span class="pharma"></span>
+
+    <span class="bio"></span>
+
+    <span class="meditech"></span>
+
+    <span class="medical"></span>
+
+  </div>
+
 
 </main>
 
+
 <script>
-const employee = document.getElementById("employee");
-const password = document.getElementById("password");
-const access = document.getElementById("access");
+
+const employee =
+  document.getElementById("employee");
+
+const password =
+  document.getElementById("password");
+
+const access =
+  document.getElementById("access");
+
 
 const intranetURL =
   "https://nifty-weather-a78.notion.site/CYAN-INTRANET-3d9c1937328780fb97d9ca22c68442cc?pvs=143";
 
+
 function enterIntranet(){
+
   if(access.disabled) return;
 
+
   access.disabled = true;
+
+
   access.innerHTML =
     'AUTHENTICATING<span class="loading"></span>';
 
+
   setTimeout(() => {
+
+
     window.open(
       intranetURL,
       "_blank",
       "noopener,noreferrer"
     );
 
-    setTimeout(() => {
-      access.disabled = false;
-      access.textContent = "ACCESS INTRANET →";
-    }, 700);
 
-  }, 650);
+    setTimeout(() => {
+
+      access.disabled = false;
+
+      access.textContent =
+        "ACCESS INTRANET →";
+
+    },700);
+
+
+  },650);
+
 }
 
-access.addEventListener("click", enterIntranet);
 
-employee.addEventListener("keydown", function(event){
-  if(event.key === "Enter"){
-    password.focus();
+access.addEventListener(
+  "click",
+  enterIntranet
+);
+
+
+employee.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Enter"){
+
+      password.focus();
+
+    }
+
   }
-});
+);
 
-password.addEventListener("keydown", function(event){
-  if(event.key === "Enter"){
-    enterIntranet();
+
+password.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Enter"){
+
+      enterIntranet();
+
+    }
+
   }
-});
+);
 
-window.addEventListener("load", function(){
-  setTimeout(() => employee.focus(), 150);
-});
+
+window.addEventListener(
+  "load",
+  function(){
+
+    setTimeout(
+      () => employee.focus(),
+      150
+    );
+
+  }
+);
+
 </script>
+
 
 </body>
 </html>
