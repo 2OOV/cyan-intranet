@@ -898,7 +898,18 @@
     document
       .getElementById("peopleSearch")
       .addEventListener("submit", function(event) {
-        event.preventDefault();
+       event.preventDefault();
+
+        const keyword =
+          document.getElementById("peopleName").value.trim();
+
+        if (!keyword) {
+          window.location.href = "people.html";
+          return;
+        }
+
+        window.location.href =
+          `people.html?q=${encodeURIComponent(keyword)}`;
       });
 
     document
@@ -933,8 +944,8 @@
     document
       .getElementById("peopleViewAll")
       .addEventListener("click", function() {
-        openNotion(notionLinks.people);
-      });
+        window.location.href = "people.html";
+    });
 
 
     /* CYAN NETWORK */
