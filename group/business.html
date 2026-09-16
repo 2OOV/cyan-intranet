@@ -185,11 +185,13 @@
       }
 
       .business-item {
+        position: relative;
         display: grid;
         grid-template-columns: 58% 42%;
         align-items: center;
         min-height: 0;
         width: 100%;
+        isolation: isolate;
       }
 
       .business-item.reverse {
@@ -197,9 +199,94 @@
       }
 
 
+      /* ─────────────────────────────
+         AFFILIATE GRADIENT PANELS
+         흰 영역 전체에 아주 연하게
+      ───────────────────────────── */
+
+      .business-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* PHARMA
+         사진 경계 → 오른쪽으로 옅어짐 */
+
+      .business-item.pharma::before {
+        left: 58%;
+        right: 0;
+        border-left: 4px solid #000047;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 71, 0.10) 0%,
+          rgba(0, 0, 71, 0.050) 18%,
+          rgba(0, 0, 71, 0.018) 42%,
+          rgba(0, 0, 71, 0.006) 66%,
+          rgba(0, 0, 71, 0) 100%
+        );
+      }
+
+      /* BIO
+         사진 경계 → 왼쪽으로 옅어짐 */
+
+      .business-item.bio::before {
+        left: 0;
+        right: 58%;
+        border-right: 4px solid #0095B6;
+        background: linear-gradient(
+          270deg,
+          rgba(0, 149, 182, 0.10) 0%,
+          rgba(0, 149, 182, 0.050) 18%,
+          rgba(0, 149, 182, 0.018) 42%,
+          rgba(0, 149, 182, 0.006) 66%,
+          rgba(0, 149, 182, 0) 100%
+        );
+      }
+
+      /* MEDITECH
+         사진 경계 → 오른쪽으로 옅어짐 */
+
+      .business-item.meditech::before {
+        left: 58%;
+        right: 0;
+        border-left: 4px solid #5D8AA8;
+        background: linear-gradient(
+          90deg,
+          rgba(93, 138, 168, 0.10) 0%,
+          rgba(93, 138, 168, 0.050) 18%,
+          rgba(93, 138, 168, 0.018) 42%,
+          rgba(93, 138, 168, 0.006) 66%,
+          rgba(93, 138, 168, 0) 100%
+        );
+      }
+
+      /* MEDICAL
+         사진 경계 → 왼쪽으로 옅어짐 */
+
+      .business-item.medical::before {
+        left: 0;
+        right: 58%;
+        border-right: 4px solid #76ABDF;
+        background: linear-gradient(
+          270deg,
+          rgba(118, 171, 223, 0.11) 0%,
+          rgba(118, 171, 223, 0.055) 18%,
+          rgba(118, 171, 223, 0.020) 42%,
+          rgba(118, 171, 223, 0.007) 66%,
+          rgba(118, 171, 223, 0) 100%
+        );
+      }
+
+
       /* IMAGES */
 
       .business-image {
+        position: relative;
+        z-index: 1;
         width: 100%;
         height: calc(100% - 10px);
         min-height: 105px;
@@ -225,6 +312,8 @@
       /* TEXT */
 
       .business-copy {
+        position: relative;
+        z-index: 2;
         width: 330px;
         max-width: calc(100% - 70px);
       }
