@@ -13,11 +13,11 @@
 
     html {
       scroll-behavior: smooth;
+      scrollbar-gutter: stable;
     }
 
     body {
       margin: 0;
-      overflow-x: hidden;
       background: #ffffff;
       color: #17191d;
       font-family:
@@ -164,10 +164,10 @@
 
     .about-visual {
       position: absolute;
-      top: 360px;
       left: 35%;
       right: 0;
       height: 300px;
+      margin-top: 48px;
       overflow: hidden;
     }
 
@@ -242,10 +242,9 @@
 
       .about-visual {
         position: relative;
-        top: auto;
         left: auto;
         right: auto;
-        width: calc(100% + 24px);
+        width: 100%;
         height: 220px;
         margin-top: 42px;
       }
@@ -278,7 +277,6 @@
       }
 
       .about-visual {
-        width: calc(100% + 20px);
         height: 190px;
       }
     }
