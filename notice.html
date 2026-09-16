@@ -759,6 +759,16 @@
       font-weight: 700;
       color: #26303d;
     }
+    .notice-comment-name-link {
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+}
+
+.notice-comment-name-link:hover {
+  color: #1645C6;
+  transform: translateX(3px);
+}
 
     .notice-comment-info {
       font-size: 11px;
@@ -923,6 +933,8 @@
     </footer>
 
   </main>
+
+   <script src="profiles.js"></script>
 
   <script>
     const notices = [
@@ -1386,7 +1398,15 @@ function renderCommentItems(comments = []) {
   return comments.map((comment) => `
     <div class="notice-comment">
       <div class="notice-comment-header">
-        <span class="notice-comment-name">${comment.name}</span>
+${profileLinks[comment.name]
+  ? `<a
+      class="notice-comment-name notice-comment-name-link"
+      href="${profileLinks[comment.name]}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >${comment.name}</a>`
+  : `<span class="notice-comment-name">${comment.name}</span>`
+}
         <span class="notice-comment-info">
           ${comment.organization}${comment.position ? ` · ${comment.position}` : ""}
         </span>
