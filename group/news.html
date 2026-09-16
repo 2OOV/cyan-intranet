@@ -415,14 +415,14 @@
       top: 0;
       right: 0;
       left: 0;
-      height: 2px;
+      height: 1px;
       background: linear-gradient(
         90deg,
-        #1645C6 0%,
-        #000047 22%,
-        #0095B6 46%,
-        #5D8AA8 72%,
-        #76ABDF 100%
+        rgba(22, 69, 198, 0.38) 0%,
+        rgba(0, 0, 71, 0.34) 22%,
+        rgba(0, 149, 182, 0.34) 46%,
+        rgba(93, 138, 168, 0.32) 72%,
+        rgba(118, 171, 223, 0.34) 100%
       );
     }
 
@@ -487,13 +487,13 @@
 
     /* ─────────────────────────────
        FAMILY DROP-UP
-       페이지 높이에 영향 없음
+       왼쪽 FAMILY SITE 기준으로 위로 열림
     ───────────────────────────── */
 
     .family-menu {
       position: absolute;
-      right: 0;
       bottom: 34px;
+      left: 0;
       width: 230px;
       padding: 8px 0;
       background: rgba(255, 255, 255, 0.98);
@@ -673,8 +673,9 @@
       }
 
       .family-menu {
-        width: 210px;
         bottom: 38px;
+        left: 0;
+        width: 210px;
       }
     }
 
@@ -1050,11 +1051,6 @@
 
     <div class="footer-inner">
 
-      <p class="footer-copyright">
-        © 2026 CYAN GROUP
-      </p>
-
-
       <div class="family-site">
 
         <button
@@ -1112,6 +1108,11 @@
         </div>
 
       </div>
+
+
+      <p class="footer-copyright">
+        © 2026 CYAN GROUP
+      </p>
 
     </div>
 
