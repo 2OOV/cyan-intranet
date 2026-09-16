@@ -860,6 +860,16 @@
       );
 
 
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const initialQuery =
+      params.get("q");
+
+    if (initialQuery) {
+      searchInput.value = initialQuery;
+    }
+
     renderDirectory();
   </script>
 
