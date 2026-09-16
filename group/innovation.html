@@ -66,6 +66,11 @@
       object-fit: contain;
     }
 
+
+    /* ─────────────────────────────
+       NAVIGATION
+    ───────────────────────────── */
+
     .global-nav {
       display: flex;
       align-items: center;
@@ -118,6 +123,20 @@
 
     .intranet-link:hover {
       color: #1645C6;
+    }
+
+
+    /* ─────────────────────────────
+       DESKTOP · ONE SCREEN
+    ───────────────────────────── */
+
+    @media (min-width: 821px) {
+
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
     }
 
 
@@ -184,7 +203,9 @@
     }
 
 
-    /* FLOW */
+    /* ─────────────────────────────
+       INNOVATION FLOW
+    ───────────────────────────── */
 
     .innovation-flow {
       position: relative;
@@ -213,6 +234,32 @@
       padding-left: 30px;
     }
 
+
+    /* 계열사별 FLOW COLOR */
+
+    .flow-item:nth-child(1) {
+      --flow-color: #0095B6;
+    }
+
+    .flow-item:nth-child(2) {
+      --flow-color: #000047;
+    }
+
+    .flow-item:nth-child(3) {
+      --flow-color: #5D8AA8;
+    }
+
+    .flow-item:nth-child(4) {
+      --flow-color: #76ABDF;
+    }
+
+    .flow-item:nth-child(5) {
+      --flow-color: #1645C6;
+    }
+
+
+    /* FLOW DOT */
+
     .flow-item::before {
       content: "";
       position: absolute;
@@ -221,7 +268,7 @@
       width: 9px;
       height: 9px;
       background: #ffffff;
-      border: 2px solid #1645C6;
+      border: 2px solid var(--flow-color);
       border-radius: 50%;
       transition:
         background 0.18s ease,
@@ -229,9 +276,12 @@
     }
 
     .flow-item:hover::before {
-      background: #1645C6;
+      background: var(--flow-color);
       transform: scale(1.15);
     }
+
+
+    /* FLOW TEXT */
 
     .flow-number {
       display: block;
@@ -253,7 +303,7 @@
     }
 
     .flow-item:hover .flow-title {
-      color: #1645C6;
+      color: var(--flow-color);
     }
 
     .flow-subtitle {
@@ -282,6 +332,13 @@
     ───────────────────────────── */
 
     @media (max-width: 820px) {
+
+      html,
+      body {
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
 
       .header-inner {
         width: calc(100% - 36px);
@@ -431,6 +488,7 @@
         >
       </a>
 
+
       <nav
         class="global-nav"
         aria-label="Main navigation"
@@ -455,6 +513,7 @@
           CAREERS
         </a>
       </nav>
+
 
       <a
         class="intranet-link"
