@@ -833,71 +833,9 @@
 
   </main>
 
+  <script src="notices.js"></script>
 
   <script>
-    /*
-      NOTICE DATA
-
-      나중에 공지를 추가할 때
-      메인 화면 HTML을 뜯는 대신
-      이 데이터만 관리하도록 분리할 예정.
-
-      현재는 기존 Notion 메인의
-      공지 6개를 그대로 옮긴 상태.
-    */
-
-    const notices = [
-      {
-        id: 106,
-        category: "전사",
-        title: "2026년 하반기 임직원 건강검진 안내",
-        department: "인사팀",
-        date: "2026.09.11",
-        views: 1248
-      },
-      {
-        id: 105,
-        category: "메디컬",
-        title: "추석 연휴 의료기관 운영 안내",
-        department: "운영지원팀",
-        date: "2026.09.09",
-        views: 783
-      },
-      {
-        id: 104,
-        category: "본사",
-        title: "외부 협력사 방문 및 회의실 이용 절차 안내",
-        department: "대외협력실",
-        date: "2026.09.07",
-        views: 426
-      },
-      {
-        id: 103,
-        category: "제약",
-        title: "연구개발구역 출입 및 보안 절차 안내",
-        department: "경영지원본부",
-        date: "2026.09.04",
-        views: 592
-      },
-      {
-        id: 102,
-        category: "바이오",
-        title: "연구시설 정기 안전점검 실시 안내",
-        department: "연구지원팀",
-        date: "2026.09.02",
-        views: 347
-      },
-      {
-        id: 101,
-        category: "메디텍",
-        title: "사내 시설 및 개발장비 이용 안내",
-        department: "운영지원팀",
-        date: "2026.08.31",
-        views: 318
-      }
-    ];
-
-
     const noticeGrid =
       document.getElementById("noticeGrid");
 
@@ -908,7 +846,6 @@
 
 
     function renderLatestNotices() {
-
       const latest =
         [...notices]
           .sort((a, b) => b.id - a.id)
@@ -956,97 +893,77 @@
 
     renderLatestNotices();
 
-
-    /*
-      PEOPLE SEARCH
-
-      이름은 입력할 수 있지만
-      검색 결과는 표시하지 않는
-      인트라넷 연출용 검색창.
-    */
-
     document
       .getElementById("peopleSearch")
       .addEventListener("submit", function(event) {
-
         event.preventDefault();
+      });
 
+    document
+      .getElementById("noticeViewAll")
+      .addEventListener("click", function() {
+        window.location.href = "notice.html";
       });
 
 
-    /*
-      아직 연결하지 않은 버튼들은
-      현재 화면에서 이동하지 않도록 유지.
-    */
+    const notionLinks = {
+      people: "https://nifty-weather-a78.notion.site/CYAN-PEOPLE-3d9c193732878077a789c520f70f3e26?pvs=143",
+      group: "https://nifty-weather-a78.notion.site/CYAN-GROUP-3d9c1937328780a8a0c7e17e72360284?pvs=143",
+      pharma: "https://nifty-weather-a78.notion.site/CYAN-PHARMA-3d9c1937328780d0b9c6f9a7c8ef4b7b?pvs=143",
+      bio: "https://nifty-weather-a78.notion.site/CYAN-BIO-3dac19373287800a8433c2846179de73?pvs=143",
+      meditech: "https://nifty-weather-a78.notion.site/CYAN-MEDITECH-3dac19373287800384e9e7c50751b8dc?pvs=143",
+      medical: "https://nifty-weather-a78.notion.site/CYAN-MEDICAL-3dbc19373287809ab2e2d8dcbfffb873?pvs=143",
+      hospital: "https://nifty-weather-a78.notion.site/3dbc1937328780e892c7f4103aa9861d?pvs=143"
+    };
+
+
+    function openNotion(url) {
+      window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+
+
+    /* CYAN PEOPLE */
 
     document
-  .getElementById("noticeViewAll")
-  .addEventListener("click", function() {
-    window.location.href = "notice.html";
-  });
-
-    const notionLinks = {
-  people: "https://nifty-weather-a78.notion.site/CYAN-PEOPLE-3d9c193732878077a789c520f70f3e26?pvs=143",
-
-  group: "https://nifty-weather-a78.notion.site/CYAN-GROUP-3d9c1937328780a8a0c7e17e72360284?pvs=143",
-
-  pharma: "https://nifty-weather-a78.notion.site/CYAN-PHARMA-3d9c1937328780d0b9c6f9a7c8ef4b7b?pvs=143",
-
-  bio: "https://nifty-weather-a78.notion.site/CYAN-BIO-3dac19373287800a8433c2846179de73?pvs=143",
-
-  meditech: "https://nifty-weather-a78.notion.site/CYAN-MEDITECH-3dac19373287800384e9e7c50751b8dc?pvs=143",
-
-  medical: "https://nifty-weather-a78.notion.site/CYAN-MEDICAL-3dbc19373287809ab2e2d8dcbfffb873?pvs=143",
-
-  hospital: "https://nifty-weather-a78.notion.site/3dbc1937328780e892c7f4103aa9861d?pvs=143"
-};
+      .getElementById("peopleViewAll")
+      .addEventListener("click", function() {
+        openNotion(notionLinks.people);
+      });
 
 
-function openNotion(url) {
-  window.open(
-    url,
-    "_blank",
-    "noopener,noreferrer"
-  );
-}
+    /* CYAN NETWORK */
+
+    const networkButtons =
+      document.querySelectorAll(
+        ".network-card > .network-visit:first-of-type"
+      );
+
+    const networkURLs = [
+      notionLinks.group,
+      notionLinks.pharma,
+      notionLinks.bio,
+      notionLinks.meditech,
+      notionLinks.medical
+    ];
+
+    networkButtons.forEach((button, index) => {
+      button.addEventListener("click", function() {
+        openNotion(networkURLs[index]);
+      });
+    });
 
 
-/* CYAN PEOPLE */
+    /* 성하대학교병원 */
 
-document
-  .getElementById("peopleViewAll")
-  .addEventListener("click", function() {
-    openNotion(notionLinks.people);
-  });
-
-
-/* CYAN NETWORK */
-
-const networkButtons =
-  document.querySelectorAll(".network-card > .network-visit:first-of-type");
-
-const networkURLs = [
-  notionLinks.group,
-  notionLinks.pharma,
-  notionLinks.bio,
-  notionLinks.meditech,
-  notionLinks.medical
-];
-
-networkButtons.forEach((button, index) => {
-  button.addEventListener("click", function() {
-    openNotion(networkURLs[index]);
-  });
-});
-
-
-/* 성하대학교병원 */
-
-document
-  .querySelector(".hospital-link")
-  .addEventListener("click", function() {
-    openNotion(notionLinks.hospital);
-  });
+    document
+      .querySelector(".hospital-link")
+      .addEventListener("click", function() {
+        openNotion(notionLinks.hospital);
+      });
   </script>
 
 </body>
