@@ -3,10 +3,1003 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>CYAN INTRANET</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #20242b;
+      font-family:
+        Arial,
+        "Pretendard",
+        "Noto Sans KR",
+        "Malgun Gothic",
+        sans-serif;
+      line-height: 1.6;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 54px 0 70px;
+    }
+
+    /* ─────────────────────────────
+       HEADER
+    ───────────────────────────── */
+
+    .header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #e5e8ed;
+    }
+
+    .brand-logo {
+      display: block;
+      width: min(520px, 74vw);
+      height: auto;
+      margin: 0 auto 38px;
+    }
+
+    .page-title {
+      margin: 0;
+      font-size: 31px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .portal-title {
+      margin-top: 26px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.1px;
+    }
+
+    .security-label {
+      margin-top: 7px;
+      color: #858b94;
+      font-size: 13px;
+    }
+
+    /* ─────────────────────────────
+       COMMON SECTION
+    ───────────────────────────── */
+
+    .section {
+      padding: 30px 0;
+      border-bottom: 1px solid #e5e8ed;
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+    }
+
+    .section-heading-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 17px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .section-description {
+      margin: 0 0 25px;
+      font-size: 14px;
+      color: #353a42;
+    }
+
+    .view-all {
+      border: 0;
+      padding: 4px 0;
+      background: transparent;
+      color: #6f747c;
+      font-size: 13px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+
+    .view-all:hover {
+      color: #1645C6;
+    }
+
+    /* ─────────────────────────────
+       NOTICE
+    ───────────────────────────── */
+
+    .notice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 54px;
+      row-gap: 28px;
+    }
+
+    .notice-item {
+      min-width: 0;
+    }
+
+    .notice-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      min-width: 0;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .notice-category {
+      flex: 0 0 auto;
+      color: #20242b;
+      font-weight: 700;
+    }
+
+    .notice-link {
+      min-width: 0;
+      overflow: hidden;
+      color: #555b64;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+
+    .notice-link:hover {
+      color: #1645C6;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .notice-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      color: #3d434c;
+      font-size: 13px;
+    }
+
+    .notice-meta span + span::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 14px;
+      margin: 0 16px;
+      vertical-align: -2px;
+      background: #1645C6;
+    }
+
+    /* ─────────────────────────────
+       PEOPLE
+    ───────────────────────────── */
+
+    .people-search {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 48px;
+      margin-left: 24%;
+    }
+
+    .people-input-wrap {
+      position: relative;
+    }
+
+    .people-input {
+      width: 100%;
+      height: 34px;
+      border: 1px solid #ececec;
+      border-radius: 5px;
+      outline: none;
+      background: #f1f0ef;
+      padding: 0 18px;
+      color: #20242b;
+      text-align: center;
+      font-size: 13px;
+      transition:
+        border-color 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .people-input::placeholder {
+      color: #4f5359;
+      opacity: 1;
+      font-style: italic;
+    }
+
+    .people-input:focus {
+      border-color: #b8c9ee;
+      background: #f7f9fd;
+    }
+
+    .search-button {
+      height: 34px;
+      border: 1px solid #ececec;
+      border-radius: 5px;
+      background: #f1f0ef;
+      color: #252a31;
+      font-size: 13px;
+      font-style: italic;
+      cursor: pointer;
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    .search-button:hover {
+      border-color: #d8e2f5;
+      background: #eaf1fc;
+    }
+
+    .search-button:active {
+      transform: translateY(1px);
+    }
+
+    /* ─────────────────────────────
+       QUICK LINKS
+    ───────────────────────────── */
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 48px;
+    }
+
+    .quick-button {
+      height: 34px;
+      border: 0;
+      border-radius: 5px;
+      background: #e2f1fc;
+      color: #27313d;
+      font-size: 13px;
+      cursor: pointer;
+      transition:
+        background 0.15s ease,
+        transform 0.08s ease;
+    }
+
+    .quick-button:hover {
+      background: #d4eafb;
+    }
+
+    .quick-button:active {
+      transform: translateY(1px);
+    }
+
+    /* ─────────────────────────────
+       NETWORK
+    ───────────────────────────── */
+
+    .network-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .network-card {
+      position: relative;
+      min-height: 126px;
+      padding-top: 2px;
+    }
+
+    .network-card::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 3px;
+      margin-bottom: 13px;
+      border-radius: 2px;
+      background: var(--division-color);
+    }
+
+    .network-name {
+      margin-bottom: 9px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .network-type {
+      color: #303640;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .network-visit {
+      display: inline-block;
+      margin-top: 14px;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #7a7f87;
+      font-size: 13px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+
+    .network-visit:hover {
+      color: var(--division-color);
+    }
+
+    .hospital-link {
+      display: inline-block;
+      margin-left: 12px;
+      color: #7a7f87;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .hospital-link:hover {
+      color: #76ABDF;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ─────────────────────────────
+       FOOTER
+    ───────────────────────────── */
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 28px;
+      color: #9a9fa7;
+      font-size: 11px;
+      letter-spacing: 0.2px;
+    }
+
+    .division-bar {
+      display: flex;
+      width: 120px;
+      height: 3px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .division-bar span {
+      flex: 1;
+    }
+
+    .division-pharma {
+      background: #000047;
+    }
+
+    .division-bio {
+      background: #0095B6;
+    }
+
+    .division-meditech {
+      background: #5D8AA8;
+    }
+
+    .division-medical {
+      background: #76ABDF;
+    }
+
+    /* ─────────────────────────────
+       RESPONSIVE
+    ───────────────────────────── */
+
+    @media (max-width: 900px) {
+      .page {
+        width: min(100% - 34px, 720px);
+        padding-top: 34px;
+      }
+
+      .brand-logo {
+        width: min(390px, 82vw);
+        margin-bottom: 32px;
+      }
+
+      .page-title {
+        font-size: 27px;
+      }
+
+      .notice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 30px;
+      }
+
+      .people-search {
+        grid-template-columns: minmax(0, 1fr) 130px;
+        gap: 14px;
+        margin-left: 0;
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .quick-button:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .network-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: calc(100% - 28px);
+        padding-top: 28px;
+      }
+
+      .brand-logo {
+        width: min(310px, 88vw);
+        margin-bottom: 28px;
+      }
+
+      .page-title {
+        font-size: 25px;
+      }
+
+      .portal-title {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      .section {
+        padding: 26px 0;
+      }
+
+      .section-title {
+        font-size: 19px;
+      }
+
+      .section-description {
+        margin-bottom: 21px;
+        font-size: 13px;
+      }
+
+      .notice-grid {
+        grid-template-columns: 1fr;
+        row-gap: 22px;
+      }
+
+      .notice-meta {
+        font-size: 12px;
+      }
+
+      .notice-meta span + span::before {
+        margin: 0 10px;
+      }
+
+      .people-search {
+        grid-template-columns: 1fr 90px;
+        gap: 8px;
+      }
+
+      .people-input {
+        text-align: left;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .network-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .network-card {
+        min-height: auto;
+      }
+
+      .footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>CYAN INTRANET</h1>
-  <p>EMPLOYEE PORTAL</p>
+
+  <main class="page">
+
+    <header class="header">
+
+      <img
+        class="brand-logo"
+        src="https://res.cloudinary.com/qucqug6s/image/upload/v1788064891/%EB%B3%B8%EC%82%AC%EB%A1%9C%EA%B3%A0_%ED%9D%B0.png"
+        alt="CYAN GROUP"
+      >
+
+      <h1 class="page-title">
+        CYAN INTRANET
+      </h1>
+
+      <div class="portal-title">
+        EMPLOYEE PORTAL
+      </div>
+
+      <div class="security-label">
+        CYAN GROUP · Internal Use Only
+      </div>
+
+    </header>
+
+
+    <section class="section" id="notice">
+
+      <div class="section-heading-row">
+
+        <h2 class="section-title">
+          Notice
+        </h2>
+
+        <button
+          class="view-all"
+          id="noticeViewAll"
+          type="button"
+        >
+          View all →
+        </button>
+
+      </div>
+
+      <p class="section-description">
+        전사 및 계열사 주요 공지사항을 확인하세요.
+      </p>
+
+      <div
+        class="notice-grid"
+        id="noticeGrid"
+      ></div>
+
+    </section>
+
+
+    <section class="section" id="people">
+
+      <div class="section-heading-row">
+
+        <h2 class="section-title">
+          CYAN PEOPLE
+        </h2>
+
+        <button
+          class="view-all"
+          id="peopleViewAll"
+          type="button"
+        >
+          View all →
+        </button>
+
+      </div>
+
+      <p class="section-description">
+        임직원의 소속 및 업무 연락처를 확인할 수 있습니다.
+      </p>
+
+      <form
+        class="people-search"
+        id="peopleSearch"
+        autocomplete="off"
+      >
+
+        <input
+          class="people-input"
+          id="peopleName"
+          type="text"
+          placeholder="Find a colleague.   이름을 검색하세요."
+          aria-label="임직원 이름 검색"
+        >
+
+        <button
+          class="search-button"
+          type="submit"
+        >
+          Search
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <section class="section" id="quickLinks">
+
+      <div class="section-heading-row">
+
+        <h2 class="section-title">
+          Quick Links
+        </h2>
+
+      </div>
+
+      <div class="quick-grid">
+
+        <button class="quick-button" type="button">
+          회의실 예약
+        </button>
+
+        <button class="quick-button" type="button">
+          IT 지원
+        </button>
+
+        <button class="quick-button" type="button">
+          복리후생
+        </button>
+
+        <button class="quick-button" type="button">
+          사내 서식
+        </button>
+
+        <button class="quick-button" type="button">
+          사내 규정
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section class="section" id="network">
+
+      <div class="section-heading-row">
+
+        <h2 class="section-title">
+          CYAN NETWORK
+        </h2>
+
+      </div>
+
+      <p class="section-description">
+        CYAN GROUP의 주요 계열사 및 내부 사이트로 이동합니다.
+      </p>
+
+      <div class="network-grid">
+
+        <article
+          class="network-card"
+          style="--division-color:#1645C6;"
+        >
+
+          <div class="network-name">
+            CYAN GROUP
+          </div>
+
+          <div class="network-type">
+            GROUP HEADQUARTERS<br>
+            그룹 전략 · 투자 · 대외협력
+          </div>
+
+          <button
+            class="network-visit"
+            type="button"
+          >
+            Visit →
+          </button>
+
+        </article>
+
+
+        <article
+          class="network-card"
+          style="--division-color:#000047;"
+        >
+
+          <div class="network-name">
+            CYAN PHARMA
+          </div>
+
+          <div class="network-type">
+            PHARMACEUTICALS<br>
+            전문의약품 · 신약 개발
+          </div>
+
+          <button
+            class="network-visit"
+            type="button"
+          >
+            Visit →
+          </button>
+
+        </article>
+
+
+        <article
+          class="network-card"
+          style="--division-color:#0095B6;"
+        >
+
+          <div class="network-name">
+            CYAN BIO
+          </div>
+
+          <div class="network-type">
+            BIOTECHNOLOGY<br>
+            바이오 연구 · 신약 플랫폼
+          </div>
+
+          <button
+            class="network-visit"
+            type="button"
+          >
+            Visit →
+          </button>
+
+        </article>
+
+
+        <article
+          class="network-card"
+          style="--division-color:#5D8AA8;"
+        >
+
+          <div class="network-name">
+            CYAN MEDITECH
+          </div>
+
+          <div class="network-type">
+            MEDICAL TECHNOLOGY<br>
+            의료기기 · 의료 AI · 디지털 헬스케어
+          </div>
+
+          <button
+            class="network-visit"
+            type="button"
+          >
+            Visit →
+          </button>
+
+        </article>
+
+
+        <article
+          class="network-card"
+          style="--division-color:#76ABDF;"
+        >
+
+          <div class="network-name">
+            CYAN MEDICAL
+          </div>
+
+          <div class="network-type">
+            MEDICAL SERVICES<br>
+            병원 · 검진센터 · 전문진료센터
+          </div>
+
+          <button
+            class="network-visit"
+            type="button"
+          >
+            Visit →
+          </button>
+
+          <button
+            class="network-visit hospital-link"
+            type="button"
+          >
+            성하대학교병원 →
+          </button>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <footer class="footer">
+
+      <span>
+        CYAN GROUP · INTERNAL NETWORK
+      </span>
+
+      <div
+        class="division-bar"
+        aria-hidden="true"
+      >
+        <span class="division-pharma"></span>
+        <span class="division-bio"></span>
+        <span class="division-meditech"></span>
+        <span class="division-medical"></span>
+      </div>
+
+    </footer>
+
+  </main>
+
+
+  <script>
+    /*
+      NOTICE DATA
+
+      나중에 공지를 추가할 때
+      메인 화면 HTML을 뜯는 대신
+      이 데이터만 관리하도록 분리할 예정.
+
+      현재는 기존 Notion 메인의
+      공지 6개를 그대로 옮긴 상태.
+    */
+
+    const notices = [
+      {
+        id: 106,
+        category: "전사",
+        title: "2026년 하반기 임직원 건강검진 안내",
+        department: "인사팀",
+        date: "2026.09.11",
+        views: 1248
+      },
+      {
+        id: 105,
+        category: "메디컬",
+        title: "추석 연휴 의료기관 운영 안내",
+        department: "운영지원팀",
+        date: "2026.09.09",
+        views: 783
+      },
+      {
+        id: 104,
+        category: "본사",
+        title: "외부 협력사 방문 및 회의실 이용 절차 안내",
+        department: "대외협력실",
+        date: "2026.09.07",
+        views: 426
+      },
+      {
+        id: 103,
+        category: "제약",
+        title: "연구개발구역 출입 및 보안 절차 안내",
+        department: "경영지원본부",
+        date: "2026.09.04",
+        views: 592
+      },
+      {
+        id: 102,
+        category: "바이오",
+        title: "연구시설 정기 안전점검 실시 안내",
+        department: "연구지원팀",
+        date: "2026.09.02",
+        views: 347
+      },
+      {
+        id: 101,
+        category: "메디텍",
+        title: "사내 시설 및 개발장비 이용 안내",
+        department: "운영지원팀",
+        date: "2026.08.31",
+        views: 318
+      }
+    ];
+
+
+    const noticeGrid =
+      document.getElementById("noticeGrid");
+
+
+    function formatViews(number) {
+      return number.toLocaleString("ko-KR");
+    }
+
+
+    function renderLatestNotices() {
+
+      const latest =
+        [...notices]
+          .sort((a, b) => b.id - a.id)
+          .slice(0, 6);
+
+      noticeGrid.innerHTML =
+        latest.map(notice => `
+          <article class="notice-item">
+
+            <div class="notice-title">
+
+              <span class="notice-category">
+                [${notice.category}]
+              </span>
+
+              <span
+                class="notice-link"
+                data-notice-id="${notice.id}"
+              >
+                ${notice.title}
+              </span>
+
+            </div>
+
+            <div class="notice-meta">
+
+              <span>
+                ${notice.department}
+              </span>
+
+              <span>
+                ${notice.date}
+              </span>
+
+              <span>
+                조회 ${formatViews(notice.views)}
+              </span>
+
+            </div>
+
+          </article>
+        `).join("");
+    }
+
+
+    renderLatestNotices();
+
+
+    /*
+      PEOPLE SEARCH
+
+      이름은 입력할 수 있지만
+      검색 결과는 표시하지 않는
+      인트라넷 연출용 검색창.
+    */
+
+    document
+      .getElementById("peopleSearch")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+      });
+
+
+    /*
+      아직 연결하지 않은 버튼들은
+      현재 화면에서 이동하지 않도록 유지.
+    */
+
+    document
+      .getElementById("noticeViewAll")
+      .addEventListener("click", function() {
+
+        /*
+          NOTICE 게시판 제작 후 연결 예정.
+        */
+
+      });
+
+
+    document
+      .getElementById("peopleViewAll")
+      .addEventListener("click", function() {
+
+        /*
+          CYAN PEOPLE Notion URL 연결 예정.
+        */
+
+      });
+  </script>
+
 </body>
 </html>
