@@ -999,6 +999,68 @@
         */
 
       });
+    const notionLinks = {
+  people: "https://nifty-weather-a78.notion.site/CYAN-PEOPLE-3d9c193732878077a789c520f70f3e26?pvs=143",
+
+  group: "https://nifty-weather-a78.notion.site/CYAN-GROUP-3d9c1937328780a8a0c7e17e72360284?pvs=143",
+
+  pharma: "https://nifty-weather-a78.notion.site/CYAN-PHARMA-3d9c1937328780d0b9c6f9a7c8ef4b7b?pvs=143",
+
+  bio: "https://nifty-weather-a78.notion.site/CYAN-BIO-3dac19373287800a8433c2846179de73?pvs=143",
+
+  meditech: "https://nifty-weather-a78.notion.site/CYAN-MEDITECH-3dac19373287800384e9e7c50751b8dc?pvs=143",
+
+  medical: "https://nifty-weather-a78.notion.site/CYAN-MEDICAL-3dbc19373287809ab2e2d8dcbfffb873?pvs=143",
+
+  hospital: "https://nifty-weather-a78.notion.site/3dbc1937328780e892c7f4103aa9861d?pvs=143"
+};
+
+
+function openNotion(url) {
+  window.open(
+    url,
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
+
+
+/* CYAN PEOPLE */
+
+document
+  .getElementById("peopleViewAll")
+  .addEventListener("click", function() {
+    openNotion(notionLinks.people);
+  });
+
+
+/* CYAN NETWORK */
+
+const networkButtons =
+  document.querySelectorAll(".network-card > .network-visit:first-of-type");
+
+const networkURLs = [
+  notionLinks.group,
+  notionLinks.pharma,
+  notionLinks.bio,
+  notionLinks.meditech,
+  notionLinks.medical
+];
+
+networkButtons.forEach((button, index) => {
+  button.addEventListener("click", function() {
+    openNotion(networkURLs[index]);
+  });
+});
+
+
+/* 성하대학교병원 */
+
+document
+  .querySelector(".hospital-link")
+  .addEventListener("click", function() {
+    openNotion(notionLinks.hospital);
+  });
   </script>
 
 </body>
