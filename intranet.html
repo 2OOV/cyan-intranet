@@ -894,6 +894,21 @@
     renderLatestNotices();
 
     document
+      .getElementById("noticeGrid")
+      .addEventListener("click", function(event) {
+        const noticeLink =
+          event.target.closest(".notice-link");
+
+        if (!noticeLink) return;
+
+        const noticeId =
+          noticeLink.dataset.noticeId;
+
+        window.location.href =
+          `notice.html?id=${noticeId}`;
+      });
+
+    document
       .getElementById("peopleSearch")
       .addEventListener("submit", function(event) {
         event.preventDefault();
