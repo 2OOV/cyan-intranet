@@ -194,12 +194,57 @@
 
     .filter-button:hover {
       border-color: #b8c5df;
-      color: var(--group);
     }
 
-    .filter-button.active {
-      border-color: var(--group);
-      background: var(--group);
+    .filter-button[data-filter="전체"]:hover,
+    .filter-button[data-filter="본사"]:hover {
+      color: #1645C6;
+    }
+
+    .filter-button[data-filter="제약"]:hover {
+      color: #000047;
+    }
+
+    .filter-button[data-filter="바이오"]:hover {
+      color: #0095B6;
+    }
+
+    .filter-button[data-filter="메디텍"]:hover {
+      color: #5D8AA8;
+    }
+
+    .filter-button[data-filter="메디컬"]:hover {
+      color: #76ABDF;
+    }
+
+    .filter-button[data-filter="전체"].active,
+    .filter-button[data-filter="본사"].active {
+      border-color: #1645C6;
+      background: #1645C6;
+      color: #fff;
+    }
+
+    .filter-button[data-filter="제약"].active {
+      border-color: #000047;
+      background: #000047;
+      color: #fff;
+    }
+
+    .filter-button[data-filter="바이오"].active {
+      border-color: #0095B6;
+      background: #0095B6;
+      color: #fff;
+    }
+
+    .filter-button[data-filter="메디텍"].active {
+      border-color: #5D8AA8;
+      background: #5D8AA8;
+      color: #fff;
+    }
+
+    .filter-button[data-filter="메디컬"].active {
+      border-color: #76ABDF;
+      background: #76ABDF;
       color: #fff;
     }
 
