@@ -772,20 +772,29 @@
       word-break: keep-all;
     }
 
-    .notice-comment-replies {
-      margin-top: 18px;
-      margin-left: 28px;
-      padding-left: 18px;
-      border-left: 2px solid #eef1f5;
-    }
+.notice-comment-replies {
+  margin-top: 18px;
+  margin-left: 28px;
+}
 
-    .notice-comment-replies .notice-comment {
-      padding-bottom: 18px;
-    }
+.notice-comment-replies > .notice-comment {
+  position: relative;
+  padding: 0 0 18px 20px;
+}
 
-    .notice-comment-replies .notice-comment:last-child {
-      padding-bottom: 0;
-    }
+.notice-comment-replies > .notice-comment::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 2px;
+  height: 42px;
+  background: #eef1f5;
+}
+
+.notice-comment-replies > .notice-comment:last-child {
+  padding-bottom: 0;
+}
     
     @media (max-width: 720px) {
       .notice-detail-head {
