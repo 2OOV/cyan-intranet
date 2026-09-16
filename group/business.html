@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Innovation | CYAN GROUP</title>
+  <title>Business | CYAN GROUP</title>
 
   <style>
     * {
@@ -35,6 +35,7 @@
 
     /* ─────────────────────────────
        HEADER
+       현재 위치 그대로 유지
     ───────────────────────────── */
 
     .site-header {
@@ -137,193 +138,263 @@
         height: 100%;
         overflow: hidden;
       }
+
+      main {
+        height: calc(100vh - 72px);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+
+      /* INTRO */
+
+      .business-intro {
+        flex: 0 0 auto;
+        width: min(1240px, calc(100% - 120px));
+        margin: 0 auto;
+        padding: 25px 0 20px;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: #1645C6;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+      }
+
+      .business-description {
+        margin: 0;
+        color: #626870;
+        font-size: 15px;
+        line-height: 1.55;
+        word-break: keep-all;
+      }
+
+
+      /* BUSINESS ROWS */
+
+      .business-list {
+        flex: 1 1 auto;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        min-height: 0;
+        width: 100%;
+        padding: 0 0 18px;
+      }
+
+      .business-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 58% 42%;
+        align-items: center;
+        min-height: 0;
+        width: 100%;
+        isolation: isolate;
+      }
+
+      .business-item.reverse {
+        grid-template-columns: 42% 58%;
+      }
+
+
+      /* ─────────────────────────────
+         AFFILIATE GRADIENT PANELS
+         흰 영역 전체에 아주 연하게
+      ───────────────────────────── */
+
+      .business-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* PHARMA
+         사진 경계 → 오른쪽으로 옅어짐 */
+
+      .business-item.pharma::before {
+        left: 58%;
+        right: 0;
+        border-left: 4px solid #000047;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 71, 0.10) 0%,
+          rgba(0, 0, 71, 0.050) 18%,
+          rgba(0, 0, 71, 0.018) 42%,
+          rgba(0, 0, 71, 0.006) 66%,
+          rgba(0, 0, 71, 0) 100%
+        );
+      }
+
+      /* BIO
+         사진 경계 → 왼쪽으로 옅어짐 */
+
+      .business-item.bio::before {
+        left: 0;
+        right: 58%;
+        border-right: 4px solid #0095B6;
+        background: linear-gradient(
+          270deg,
+          rgba(0, 149, 182, 0.10) 0%,
+          rgba(0, 149, 182, 0.050) 18%,
+          rgba(0, 149, 182, 0.018) 42%,
+          rgba(0, 149, 182, 0.006) 66%,
+          rgba(0, 149, 182, 0) 100%
+        );
+      }
+
+      /* MEDITECH
+         사진 경계 → 오른쪽으로 옅어짐 */
+
+      .business-item.meditech::before {
+        left: 58%;
+        right: 0;
+        border-left: 4px solid #5D8AA8;
+        background: linear-gradient(
+          90deg,
+          rgba(93, 138, 168, 0.10) 0%,
+          rgba(93, 138, 168, 0.050) 18%,
+          rgba(93, 138, 168, 0.018) 42%,
+          rgba(93, 138, 168, 0.006) 66%,
+          rgba(93, 138, 168, 0) 100%
+        );
+      }
+
+      /* MEDICAL
+         사진 경계 → 왼쪽으로 옅어짐 */
+
+      .business-item.medical::before {
+        left: 0;
+        right: 58%;
+        border-right: 4px solid #76ABDF;
+        background: linear-gradient(
+          270deg,
+          rgba(118, 171, 223, 0.11) 0%,
+          rgba(118, 171, 223, 0.055) 18%,
+          rgba(118, 171, 223, 0.020) 42%,
+          rgba(118, 171, 223, 0.007) 66%,
+          rgba(118, 171, 223, 0) 100%
+        );
+      }
+
+
+      /* IMAGES */
+
+      .business-image {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: calc(100% - 10px);
+        min-height: 105px;
+        max-height: 145px;
+        overflow: hidden;
+        background: #f2f4f6;
+      }
+
+      .business-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.6s ease;
+      }
+
+      .business-item:hover .business-image img {
+        transform: scale(1.012);
+      }
+
+
+      /* TEXT */
+
+      .business-copy {
+        position: relative;
+        z-index: 2;
+        width: 330px;
+        max-width: calc(100% - 70px);
+      }
+
+      .business-item:not(.reverse) .business-copy {
+        justify-self: start;
+        margin-left: 64px;
+      }
+
+      .business-item.reverse .business-copy {
+        justify-self: end;
+        width: max-content;
+        max-width: calc(100% - 70px);
+        margin-right: 64px;
+      }
+
+      .company-name {
+        margin: 0 0 8px;
+        color: #17191d;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+      }
+
+      .company-category {
+        display: block;
+        margin: 0 0 5px;
+        font-size: 9px;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0.15em;
+      }
+
+      .company-description {
+        display: block;
+        margin: 0;
+        color: #5d636b;
+        font-size: 13px;
+        line-height: 1.45;
+        word-break: keep-all;
+      }
+
+      .learn-more {
+        display: block;
+        width: max-content;
+        margin-top: 10px;
+        color: #656b73;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        transition:
+          color 0.15s ease,
+          transform 0.15s ease;
+      }
+
+      .learn-more:hover {
+        color: #1645C6;
+        transform: translateX(3px);
+      }
     }
 
 
     /* ─────────────────────────────
-       INNOVATION
+       AFFILIATE COLORS
     ───────────────────────────── */
 
-    .innovation {
-      min-height: calc(100vh - 72px);
-      display: flex;
-      align-items: center;
+    .pharma .company-category {
+      color: #000047;
     }
 
-    .innovation-inner {
-      width: min(1240px, calc(100% - 120px));
-      margin: 0 auto;
-      padding: 58px 0 70px;
+    .bio .company-category {
+      color: #0095B6;
     }
 
-
-    /* INTRO */
-
-    .eyebrow {
-      margin: 0 0 26px;
-      color: #1645C6;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
+    .meditech .company-category {
+      color: #5D8AA8;
     }
 
-    .innovation-title {
-      max-width: 780px;
-      margin: 0;
-      color: #17191d;
-      font-size: clamp(54px, 6vw, 84px);
-      font-weight: 500;
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-    }
-
-    .innovation-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      margin-top: 42px;
-    }
-
-    .intro-lead {
-      margin: 0;
-      color: #272b31;
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.75;
-      word-break: keep-all;
-    }
-
-    .intro-description {
-      max-width: 510px;
-      margin: 0;
-      color: #686e76;
-      font-size: 14px;
-      line-height: 1.8;
-      word-break: keep-all;
-    }
-
-
-    /* ─────────────────────────────
-       INNOVATION FLOW
-    ───────────────────────────── */
-
-    .innovation-flow {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      margin-top: 72px;
-      padding-top: 30px;
-    }
-
-    .innovation-flow::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      height: 1px;
-      background: #dfe3e8;
-    }
-
-    .flow-item {
-      position: relative;
-      padding: 0 30px 0 0;
-    }
-
-    .flow-item:not(:first-child) {
-      padding-left: 30px;
-    }
-
-
-    /* 계열사별 FLOW COLOR */
-
-    .flow-item:nth-child(1) {
-      --flow-color: #0095B6;
-    }
-
-    .flow-item:nth-child(2) {
-      --flow-color: #000047;
-    }
-
-    .flow-item:nth-child(3) {
-      --flow-color: #5D8AA8;
-    }
-
-    .flow-item:nth-child(4) {
-      --flow-color: #76ABDF;
-    }
-
-    .flow-item:nth-child(5) {
-      --flow-color: #1645C6;
-    }
-
-
-    /* FLOW DOT */
-
-    .flow-item::before {
-      content: "";
-      position: absolute;
-      top: -35px;
-      left: 0;
-      width: 9px;
-      height: 9px;
-      background: #ffffff;
-      border: 2px solid var(--flow-color);
-      border-radius: 50%;
-      transition:
-        background 0.18s ease,
-        transform 0.18s ease;
-    }
-
-    .flow-item:hover::before {
-      background: var(--flow-color);
-      transform: scale(1.15);
-    }
-
-
-    /* FLOW TEXT */
-
-    .flow-number {
-      display: block;
-      margin-bottom: 18px;
-      color: #9aa0a8;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-    }
-
-    .flow-title {
-      margin: 0 0 8px;
-      color: #202329;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: 0.06em;
-      transition: color 0.18s ease;
-    }
-
-    .flow-item:hover .flow-title {
-      color: var(--flow-color);
-    }
-
-    .flow-subtitle {
-      display: block;
-      min-height: 28px;
-      margin-bottom: 15px;
-      color: #767c84;
-      font-size: 10px;
-      font-weight: 600;
-      line-height: 1.4;
-      letter-spacing: 0.02em;
-    }
-
-    .flow-description {
-      max-width: 185px;
-      margin: 0;
-      color: #555b63;
-      font-size: 12px;
-      line-height: 1.65;
-      word-break: keep-all;
+    .medical .company-category {
+      color: #76ABDF;
     }
 
 
@@ -332,13 +403,6 @@
     ───────────────────────────── */
 
     @media (max-width: 820px) {
-
-      html,
-      body {
-        height: auto;
-        overflow-x: hidden;
-        overflow-y: auto;
-      }
 
       .header-inner {
         width: calc(100% - 36px);
@@ -359,87 +423,106 @@
         height: 25px;
       }
 
-      .innovation {
-        min-height: 0;
-        display: block;
-      }
 
-      .innovation-inner {
+      .business-intro {
         width: calc(100% - 48px);
-        padding: 50px 0 70px;
+        margin: 0 auto;
+        padding: 48px 0 44px;
       }
 
       .eyebrow {
-        margin-bottom: 22px;
+        margin: 0 0 16px;
+        color: #1645C6;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
       }
 
-      .innovation-title {
-        max-width: 560px;
-        font-size: clamp(48px, 13vw, 70px);
-        line-height: 1;
+      .business-description {
+        margin: 0;
+        color: #626870;
+        font-size: 16px;
+        line-height: 1.75;
+        word-break: keep-all;
       }
 
-      .innovation-intro {
+
+      .business-list {
+        padding-bottom: 64px;
+      }
+
+      .business-item,
+      .business-item.reverse {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+        margin-bottom: 58px;
+      }
+
+      .business-item.reverse .business-image {
+        order: 1;
+      }
+
+      .business-item.reverse .business-copy {
+        order: 2;
+      }
+
+      .business-image {
+        width: 100%;
+        height: 230px;
+        overflow: hidden;
+        background: #f2f4f6;
+      }
+
+      .business-image img {
         display: block;
-        margin-top: 38px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       }
 
-      .intro-lead {
-        font-size: 17px;
+      .business-copy,
+      .business-item:not(.reverse) .business-copy,
+      .business-item.reverse .business-copy {
+        width: calc(100% - 48px);
+        max-width: none;
+        margin: 0 auto;
       }
 
-      .intro-description {
+      .company-name {
+        margin: 0 0 9px;
+        color: #17191d;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+      }
+
+      .company-category {
+        display: block;
+        margin: 0 0 6px;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0.14em;
+      }
+
+      .company-description {
+        display: block;
+        margin: 0;
+        color: #555b63;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .learn-more {
+        display: inline-block;
         margin-top: 18px;
-        font-size: 14px;
-      }
-
-
-      /* MOBILE FLOW */
-
-      .innovation-flow {
-        display: block;
-        margin-top: 58px;
-        padding: 0 0 0 27px;
-      }
-
-      .innovation-flow::before {
-        top: 0;
-        bottom: 0;
-        left: 4px;
-        width: 1px;
-        height: auto;
-      }
-
-      .flow-item,
-      .flow-item:not(:first-child) {
-        padding: 0 0 46px 0;
-      }
-
-      .flow-item:last-child {
-        padding-bottom: 0;
-      }
-
-      .flow-item::before {
-        top: 2px;
-        left: -27px;
-      }
-
-      .flow-number {
-        margin-bottom: 12px;
-      }
-
-      .flow-title {
-        font-size: 15px;
-      }
-
-      .flow-subtitle {
-        min-height: 0;
-        margin-bottom: 11px;
-      }
-
-      .flow-description {
-        max-width: 420px;
-        font-size: 13px;
+        color: #555b63;
+        font-size: 11px;
+        font-weight: 600;
       }
     }
 
@@ -459,12 +542,15 @@
         letter-spacing: 0.05em;
       }
 
-      .innovation-inner {
+      .business-intro,
+      .business-copy,
+      .business-item:not(.reverse) .business-copy,
+      .business-item.reverse .business-copy {
         width: calc(100% - 40px);
       }
 
-      .innovation-title {
-        font-size: 46px;
+      .business-image {
+        height: 210px;
       }
     }
   </style>
@@ -497,11 +583,11 @@
           ABOUT
         </a>
 
-        <a class="nav-link" href="business.html">
+        <a class="nav-link active" href="business.html">
           BUSINESS
         </a>
 
-        <a class="nav-link active" href="innovation.html">
+        <a class="nav-link" href="innovation.html">
           INNOVATION
         </a>
 
@@ -529,152 +615,181 @@
   </header>
 
 
-  <main class="innovation">
+  <main>
 
-    <div class="innovation-inner">
+    <section class="business-intro">
 
       <p class="eyebrow">
-        OUR INNOVATION
+        OUR BUSINESS
       </p>
 
-      <h1 class="innovation-title">
-        From Research<br>
-        to Real-World Care.
-      </h1>
+      <p class="business-description">
+        각 분야의 전문성을 바탕으로 연구와 기술, 의료의 새로운 가능성을 연결합니다.
+      </p>
+
+    </section>
 
 
-      <div class="innovation-intro">
-
-        <p class="intro-lead">
-          연구의 가능성을 기술로 발전시키고,<br>
-          의료 현장과 연결합니다.
-        </p>
-
-        <p class="intro-description">
-          CYAN GROUP은 연구·개발·의료기술·임상 네트워크를 연결하여
-          새로운 헬스케어의 가능성을 확장합니다.
-        </p>
-
-      </div>
+    <section class="business-list">
 
 
-      <section
-        class="innovation-flow"
-        aria-label="CYAN GROUP Innovation Process"
-      >
+      <!-- CYAN PHARMA -->
 
-        <article class="flow-item">
+      <article class="business-item pharma">
 
-          <span class="flow-number">
-            01
-          </span>
+        <div class="business-image">
+          <img
+            src="https://res.cloudinary.com/qucqug6s/image/upload/v1789566330/%EA%B7%B8%EB%A3%B9%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80_%EC%A0%9C%EC%95%BD.png"
+            alt="CYAN PHARMA"
+          >
+        </div>
 
-          <h2 class="flow-title">
-            RESEARCH
+        <div class="business-copy">
+
+          <h2 class="company-name">
+            CYAN PHARMA
           </h2>
 
-          <span class="flow-subtitle">
-            Discovery &amp; Science
-          </span>
-
-          <p class="flow-description">
-            질환과 생명과학에 대한 연구를 바탕으로
-            새로운 치료 가능성을 탐색합니다.
+          <p class="company-category">
+            PHARMACEUTICALS
           </p>
 
-        </article>
+          <p class="company-description">
+            전문의약품 · 신약 개발
+          </p>
+
+          <a
+            class="learn-more"
+            href="https://app.notion.com/p/CYAN-PHARMA-3d9c1937328780d0b9c6f9a7c8ef4b7b?pvs=21"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more →
+          </a>
+
+        </div>
+
+      </article>
 
 
-        <article class="flow-item">
+      <!-- CYAN BIO -->
 
-          <span class="flow-number">
-            02
-          </span>
+      <article class="business-item reverse bio">
 
-          <h2 class="flow-title">
-            DEVELOPMENT
+        <div class="business-copy">
+
+          <h2 class="company-name">
+            CYAN BIO
           </h2>
 
-          <span class="flow-subtitle">
-            Drug Development
-          </span>
-
-          <p class="flow-description">
-            연구에서 발견한 가능성을
-            의약품과 치료 기술로 발전시킵니다.
+          <p class="company-category">
+            BIOTECHNOLOGY
           </p>
 
-        </article>
+          <p class="company-description">
+            바이오 연구 · 신약 플랫폼
+          </p>
+
+          <a
+            class="learn-more"
+            href="https://app.notion.com/p/CYAN-BIO-3dac19373287800a8433c2846179de73?pvs=21"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more →
+          </a>
+
+        </div>
+
+        <div class="business-image">
+          <img
+            src="https://res.cloudinary.com/qucqug6s/image/upload/v1789566329/%EA%B7%B8%EB%A3%B9%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80_%EB%B0%94%EC%9D%B4%EC%98%A4.png"
+            alt="CYAN BIO"
+          >
+        </div>
+
+      </article>
 
 
-        <article class="flow-item">
+      <!-- CYAN MEDITECH -->
 
-          <span class="flow-number">
-            03
-          </span>
+      <article class="business-item meditech">
 
-          <h2 class="flow-title">
-            TECHNOLOGY
+        <div class="business-image">
+          <img
+            src="https://res.cloudinary.com/qucqug6s/image/upload/v1789566328/%EA%B7%B8%EB%A3%B9%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80_%EB%A9%94%EB%94%94%ED%85%8D.png"
+            alt="CYAN MEDITECH"
+          >
+        </div>
+
+        <div class="business-copy">
+
+          <h2 class="company-name">
+            CYAN MEDITECH
           </h2>
 
-          <span class="flow-subtitle">
-            Medical Technology
-          </span>
-
-          <p class="flow-description">
-            의료기기와 디지털 기술을 통해
-            진단과 치료의 새로운 방법을 개발합니다.
+          <p class="company-category">
+            MEDICAL TECHNOLOGY
           </p>
 
-        </article>
+          <p class="company-description">
+            의료기기 · 의료 AI · 디지털 헬스케어
+          </p>
+
+          <a
+            class="learn-more"
+            href="https://app.notion.com/p/CYAN-MEDITECH-3dac19373287800384e9e7c50751b8dc?pvs=21"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more →
+          </a>
+
+        </div>
+
+      </article>
 
 
-        <article class="flow-item">
+      <!-- CYAN MEDICAL -->
 
-          <span class="flow-number">
-            04
-          </span>
+      <article class="business-item reverse medical">
 
-          <h2 class="flow-title">
-            CLINICAL
+        <div class="business-copy">
+
+          <h2 class="company-name">
+            CYAN MEDICAL
           </h2>
 
-          <span class="flow-subtitle">
-            Clinical Translation
-          </span>
-
-          <p class="flow-description">
-            연구와 기술을 임상 현장과 연결하여
-            실제 의료 환경에서의 가능성을 검증합니다.
+          <p class="company-category">
+            MEDICAL SERVICES
           </p>
 
-        </article>
-
-
-        <article class="flow-item">
-
-          <span class="flow-number">
-            05
-          </span>
-
-          <h2 class="flow-title">
-            CARE
-          </h2>
-
-          <span class="flow-subtitle">
-            Healthcare
-          </span>
-
-          <p class="flow-description">
-            연구에서 시작된 혁신이
-            더 나은 의료 경험으로 이어지도록 합니다.
+          <p class="company-description">
+            병원 · 검진센터 · 전문진료센터
           </p>
 
-        </article>
+          <a
+            class="learn-more"
+            href="https://app.notion.com/p/CYAN-MEDICAL-3dbc19373287809ab2e2d8dcbfffb873?pvs=21"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more →
+          </a>
 
-      </section>
+        </div>
 
-    </div>
+        <div class="business-image">
+          <img
+            src="https://res.cloudinary.com/qucqug6s/image/upload/v1789566328/%EA%B7%B8%EB%A3%B9%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80_%EB%A9%94%EB%94%94%EC%BB%AC.png"
+            alt="CYAN MEDICAL"
+          >
+        </div>
+
+      </article>
+
+
+    </section>
 
   </main>
 
