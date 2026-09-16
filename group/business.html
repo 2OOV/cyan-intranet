@@ -202,13 +202,14 @@
       /* ─────────────────────────────
          AFFILIATE GRADIENT PANELS
          흰 영역 전체에 아주 연하게
+         사진 높이에 맞춰 위아래 5px 정렬
       ───────────────────────────── */
 
       .business-item::before {
         content: "";
         position: absolute;
-        top: 0;
-        bottom: 0;
+        top: 5px;
+        bottom: 5px;
         z-index: -1;
         pointer-events: none;
       }
