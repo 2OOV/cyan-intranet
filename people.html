@@ -38,6 +38,27 @@
       padding: 54px 0 70px;
     }
 
+        /* BACK TO INTRANET */
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 18px;
+      color: #7a8493;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition:
+        color 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .back-link:hover {
+      color: #1645C6;
+      transform: translateX(-3px);
+    }
 
     /* HEADER */
 
@@ -466,6 +487,12 @@
 
   <main class="page">
 
+    <a
+      class="back-link"
+      href="intranet.html"
+    >
+      ← BACK TO INTRANET
+    </a>
     <header class="page-header">
 
       <div class="header-top">
