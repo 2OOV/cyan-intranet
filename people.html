@@ -44,8 +44,6 @@
     .back-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 8px;
       color: #7a8493;
       font-size: 10px;
       font-weight: 700;
@@ -96,20 +94,24 @@
       letter-spacing: -0.03em;
     }
 
-    .header-meta {
-      flex-shrink: 0;
-      text-align: right;
-    }
-
     .internal-label {
+      flex-shrink: 0;
       padding-top: 4px;
       color: #8a94a3;
       font-size: 11px;
       letter-spacing: 0.08em;
     }
 
+    .header-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 14px;
+    }
+
     .description {
-      margin: 14px 0 0;
+      margin: 0;
       color: #697386;
       font-size: 14px;
       line-height: 1.7;
@@ -448,13 +450,18 @@
         display: block;
       }
 
-      .header-meta {
-        margin-top: 14px;
-        text-align: left;
+      .internal-label {
+        margin-top: 10px;
+        padding-top: 0;
       }
 
-      .internal-label {
-        padding-top: 0;
+      .header-bottom {
+        display: block;
+        margin-top: 14px;
+      }
+
+      .back-link {
+        margin-top: 10px;
       }
 
       h1 {
@@ -513,26 +520,26 @@
           </h1>
         </div>
 
-        <div class="header-meta">
-
-          <a
-            class="back-link"
-            href="intranet.html"
-          >
-            ← BACK TO INTRANET
-          </a>
-
-          <div class="internal-label">
-            CYAN GROUP · Internal Use Only
-          </div>
-
+        <div class="internal-label">
+          CYAN GROUP · Internal Use Only
         </div>
 
       </div>
 
-      <p class="description">
-        임직원의 소속 및 업무 연락처를 확인할 수 있습니다.
-      </p>
+      <div class="header-bottom">
+
+        <p class="description">
+          임직원의 소속 및 업무 연락처를 확인할 수 있습니다.
+        </p>
+
+        <a
+          class="back-link"
+          href="intranet.html"
+        >
+          ← BACK TO INTRANET
+        </a>
+
+      </div>
 
     </header>
 
