@@ -38,13 +38,14 @@
       padding: 54px 0 70px;
     }
 
-        /* BACK TO INTRANET */
+
+    /* BACK TO INTRANET */
 
     .back-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 18px;
+      margin-bottom: 8px;
       color: #7a8493;
       font-size: 10px;
       font-weight: 700;
@@ -59,6 +60,7 @@
       color: #1645C6;
       transform: translateX(-3px);
     }
+
 
     /* HEADER */
 
@@ -94,8 +96,12 @@
       letter-spacing: -0.03em;
     }
 
-    .internal-label {
+    .header-meta {
       flex-shrink: 0;
+      text-align: right;
+    }
+
+    .internal-label {
       padding-top: 4px;
       color: #8a94a3;
       font-size: 11px;
@@ -183,7 +189,7 @@
     }
 
     .filter-button:hover {
-  border-color: #9fb2e7;
+      border-color: #9fb2e7;
     }
 
     .filter-button[data-affiliate="ALL"]:hover,
@@ -217,32 +223,33 @@
     .filter-button[data-affiliate="GROUP"].active {
       border-color: #1645C6;
       background: #1645C6;
-   }
+    }
 
     .filter-button[data-affiliate="PHARMA"].active {
       border-color: #000047;
       background: #000047;
-   }
+    }
 
     .filter-button[data-affiliate="BIO"].active {
       border-color: #0095B6;
       background: #0095B6;
-   }
+    }
 
     .filter-button[data-affiliate="MEDITECH"].active {
       border-color: #5D8AA8;
       background: #5D8AA8;
-   }
+    }
 
     .filter-button[data-affiliate="MEDICAL"].active {
       border-color: #76ABDF;
       background: #76ABDF;
-   }
+    }
 
     .filter-button.active:hover {
       color: #ffffff;
     }
-    
+
+
     /* DIRECTORY GUIDE */
 
     .guide {
@@ -394,6 +401,7 @@
       color: #76ABDF;
     }
 
+
     /* EMPTY RESULT */
 
     .empty-result {
@@ -440,8 +448,12 @@
         display: block;
       }
 
+      .header-meta {
+        margin-top: 14px;
+        text-align: left;
+      }
+
       .internal-label {
-        margin-top: 10px;
         padding-top: 0;
       }
 
@@ -487,12 +499,6 @@
 
   <main class="page">
 
-    <a
-      class="back-link"
-      href="intranet.html"
-    >
-      ← BACK TO INTRANET
-    </a>
     <header class="page-header">
 
       <div class="header-top">
@@ -507,8 +513,19 @@
           </h1>
         </div>
 
-        <div class="internal-label">
-          CYAN GROUP · Internal Use Only
+        <div class="header-meta">
+
+          <a
+            class="back-link"
+            href="intranet.html"
+          >
+            ← BACK TO INTRANET
+          </a>
+
+          <div class="internal-label">
+            CYAN GROUP · Internal Use Only
+          </div>
+
         </div>
 
       </div>
