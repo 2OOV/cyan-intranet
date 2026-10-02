@@ -1,5 +1,13 @@
 const notices = [
       {
+        id: 108,
+        category: "전사",
+        title: "개천절 대체공휴일 휴무 안내",
+        department: "인사팀",
+        date: "2026.09.30",
+        views: 946
+      },
+      {
         id: 107,
         category: "전사",
         title: "2026년 추석 명절 인사",
@@ -58,6 +66,94 @@ const notices = [
     ];
 
   const noticeDetails = {
+    108: {
+      content: `
+        <p>
+          임직원 여러분께,
+        </p>
+
+        <p>
+          개천절 대체공휴일에 따른 휴무 일정을 아래와 같이 안내드리오니
+          업무 일정에 참고하여 주시기 바랍니다.
+        </p>
+
+        <h3>■ 휴무일</h3>
+        <p>2026.10.05 (월) · 개천절 대체공휴일</p>
+
+        <h3>■ 대상</h3>
+        <p>CYAN GROUP 및 전 계열사</p>
+
+        <h3>■ 운영 안내</h3>
+        <p>
+          휴무일에는 본사 및 각 계열사의 일반 업무가 운영되지 않습니다.
+          단, 의료기관 및 필수 운영 부서는 부서별 근무 일정에 따라 운영될 수 있으므로
+          해당 임직원께서는 별도 안내를 확인하여 주시기 바랍니다.
+        </p>
+
+        <h3>■ 협조사항</h3>
+        <p>
+          외부 미팅 및 업무 일정을 사전에 확인하여 주시고,
+          휴무로 인한 업무 공백이 발생하지 않도록 필요한 사항을 미리 조율하여 주시기 바랍니다.
+        </p>
+
+        <p>문의 │ CYAN GROUP 인사팀</p>
+      `,
+
+      comments: [
+        {
+          name: "차이겸",
+          organization: "CYAN PHARMA · 전략사업본부",
+          position: "차장",
+          date: "09.30 09:14",
+          content: "확인했습니다. 월요일은 회사에서 뵙지 않겠습니다.",
+          replies: [
+            {
+              name: "윤태혁",
+              organization: "CYAN PHARMA · 전략사업본부",
+              position: "본부장",
+              date: "09.30 09:19",
+              content: "그게 휴무입니다."
+            }
+          ]
+        },
+
+        {
+          name: "함해솔",
+          organization: "CYAN BIO · 플랫폼연구실",
+          position: "책임연구원",
+          date: "09.30 10:37",
+          content: "월요일 실험 일정은 금요일로 조정하겠습니다.",
+          replies: [
+            {
+              name: "백도윤",
+              organization: "CYAN BIO · 플랫폼연구실",
+              position: "선임연구원",
+              date: "09.30 10:41",
+              content: "금요일도 퇴근은 하셔야 합니다."
+            }
+          ]
+        },
+
+        {
+          name: "윤이안",
+          organization: "CYAN MEDICAL · 성하대학교병원 · 순환기내과",
+          position: "MD",
+          date: "09.30 12:08",
+          content: "의료기관 근무 일정은 부서별 안내 확인 부탁드립니다.",
+          replies: []
+        },
+
+        {
+          name: "윤지혁",
+          organization: "CYAN GROUP · 그룹전략기획실",
+          position: "차장",
+          date: "09.30 14:26",
+          content: "외부 일정 조정 완료했습니다.",
+          replies: []
+        }
+      ]
+    },
+
     107: {
       content: `
         <p>
