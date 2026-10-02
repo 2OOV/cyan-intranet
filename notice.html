@@ -1105,13 +1105,14 @@
         return;
       }
 
-        const noticeId = Number(titleButton.dataset.id);
+      const noticeId = Number(titleButton.dataset.id);
+      const notice = notices.find((item) => item.id === noticeId);
 
-    if (!noticeDetails[noticeId]) {
-      return;
-    }
+      if (!notice || !notice.content) {
+        return;
+      }
 
-    window.location.href = `notice.html?id=${noticeId}`;
+      window.location.href = `notice.html?id=${noticeId}`;
     });
 
 function countComments(comments = []) {
@@ -1171,9 +1172,10 @@ function renderComments(comments = []) {
 const params = new URLSearchParams(window.location.search);
 const detailId = Number(params.get("id"));
 
-if (detailId && noticeDetails[detailId]) {
-  const notice = notices.find((item) => item.id === detailId);
-  const detail = noticeDetails[detailId];
+const detailNotice = notices.find((item) => item.id === detailId);
+
+if (detailId && detailNotice && detailNotice.content) {
+  const notice = detailNotice;
   
   document.querySelector(".toolbar").style.display = "none";
   document.querySelector(".notice-header").style.display = "none";
@@ -1196,11 +1198,11 @@ if (detailId && noticeDetails[detailId]) {
       </div>
 
       <div class="notice-detail-body">
-        ${detail.content}
+        ${notice.content}
       </div>
 
 
-      ${renderComments(detail.comments)}
+      ${renderComments(notice.comments || [])}
       
       <div class="notice-detail-footer">
         <a href="notice.html">← 목록으로</a>
