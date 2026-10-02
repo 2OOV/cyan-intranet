@@ -150,5 +150,13 @@ const employees = [
     department: "그룹투자전략실",
     position: "이사",
     extension: "2118"
+  },
+    {
+    name: "박선유",
+    affiliate: "MEDITECH",
+    organization: "CYAN MEDITECH",
+    department: "메디텍 개발본부",
+    position: "본부장",
+    extension: "5103"
   }
 ];
