@@ -328,12 +328,23 @@
     }
 
     .employee-name {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
       margin-bottom: 9px;
       color: #202938;
       font-size: 15px;
       font-weight: 700;
       line-height: 1.35;
+    }
+
+    .employee-name::before {
+      content: "";
+      display: block;
+      width: 3px;
+      height: 17px;
+      background: #1645C6;
+      flex-shrink: 0;
     }
 
     .employee-name-link {
