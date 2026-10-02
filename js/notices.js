@@ -2,7 +2,7 @@ const notices = [
       {
         id: 108,
         category: "전사",
-        title: "개천절 대체공휴일 휴무 안내",
+        title: "2026년 10월 공휴일 및 휴무 일정 안내",
         department: "인사팀",
         date: "2026.09.30",
         views: 946
@@ -73,12 +73,13 @@ const notices = [
         </p>
 
         <p>
-          개천절 대체공휴일에 따른 휴무 일정을 아래와 같이 안내드리오니
+          2026년 10월 공휴일에 따른 휴무 일정을 아래와 같이 안내드리오니
           업무 일정에 참고하여 주시기 바랍니다.
         </p>
 
         <h3>■ 휴무일</h3>
         <p>2026.10.05 (월) · 개천절 대체공휴일</p>
+        <p>2026.10.09 (금) · 한글날</p>
 
         <h3>■ 대상</h3>
         <p>CYAN GROUP 및 전 계열사</p>
@@ -92,7 +93,7 @@ const notices = [
 
         <h3>■ 협조사항</h3>
         <p>
-          외부 미팅 및 업무 일정을 사전에 확인하여 주시고,
+          공휴일 전후 외부 미팅 및 업무 일정을 사전에 확인하여 주시고,
           휴무로 인한 업무 공백이 발생하지 않도록 필요한 사항을 미리 조율하여 주시기 바랍니다.
         </p>
 
@@ -105,14 +106,14 @@ const notices = [
           organization: "CYAN PHARMA · 전략사업본부",
           position: "차장",
           date: "09.30 09:14",
-          content: "확인했습니다. 월요일은 회사에서 뵙지 않겠습니다.",
+          content: "확인했습니다. 다음 주에는 회사에서 자주 뵙지 않겠습니다.",
           replies: [
             {
               name: "윤태혁",
               organization: "CYAN PHARMA · 전략사업본부",
               position: "본부장",
               date: "09.30 09:19",
-              content: "그게 휴무입니다."
+              content: "공휴일이 두 번이니까."
             }
           ]
         },
@@ -122,14 +123,14 @@ const notices = [
           organization: "CYAN BIO · 플랫폼연구실",
           position: "책임연구원",
           date: "09.30 10:37",
-          content: "월요일 실험 일정은 금요일로 조정하겠습니다.",
+          content: "실험 일정은 공휴일 피해 조정하겠습니다.",
           replies: [
             {
               name: "백도윤",
               organization: "CYAN BIO · 플랫폼연구실",
               position: "선임연구원",
               date: "09.30 10:41",
-              content: "금요일도 퇴근은 하셔야 합니다."
+              content: "공휴일에 나오지 않으시면 됩니다."
             }
           ]
         },
