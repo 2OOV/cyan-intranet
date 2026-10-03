@@ -54,7 +54,7 @@
     .page {
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 72px 0 48px;
+      padding: 58px 0 48px;
     }
 
     /* =========================
@@ -63,14 +63,14 @@
 
     .header {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 48px;
     }
 
     .brand-logo {
       display: block;
-      width: min(310px, 72vw);
+      width: min(290px, 72vw);
       height: auto;
-      margin: 0 auto 28px;
+      margin: 0 auto 24px;
     }
 
     .header-title {
@@ -92,8 +92,8 @@
 
     .internal-label {
       display: inline-block;
-      margin-top: 20px;
-      padding-top: 12px;
+      margin-top: 18px;
+      padding-top: 11px;
       border-top: 1px solid #dce2eb;
       color: #9aa2af;
       font-size: 10px;
@@ -185,8 +185,10 @@
 
     .latest-card {
       position: relative;
-      display: block;
-      padding: 38px 42px 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 44%);
+      align-items: stretch;
+      overflow: hidden;
       border: 1px solid #dce3ed;
       border-top: 3px solid var(--group);
       background: var(--soft-background);
@@ -198,6 +200,14 @@
     .latest-card:hover {
       border-color: #b9c7e3;
       background: #f4f7fc;
+    }
+
+    .latest-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding: 38px 42px 36px;
     }
 
     .latest-category {
@@ -218,7 +228,7 @@
     }
 
     .latest-description {
-      max-width: 720px;
+      max-width: 620px;
       margin: 13px 0 0;
       color: #667080;
       font-size: 13px;
@@ -232,6 +242,22 @@
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.08em;
+    }
+
+    .latest-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      padding: 22px 24px 22px 0;
+    }
+
+    .latest-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 245px;
+      object-fit: contain;
     }
 
     /* =========================
@@ -495,14 +521,33 @@
        RESPONSIVE
     ========================= */
 
+    @media (max-width: 900px) {
+      .latest-card {
+        grid-template-columns: 1fr;
+      }
+
+      .latest-visual {
+        padding: 0 24px 28px;
+      }
+
+      .latest-image {
+        width: 100%;
+        max-height: none;
+      }
+    }
+
     @media (max-width: 760px) {
       .page {
         width: min(100% - 28px, 1180px);
-        padding-top: 44px;
+        padding-top: 40px;
       }
 
       .header {
-        margin-bottom: 46px;
+        margin-bottom: 40px;
+      }
+
+      .brand-logo {
+        width: min(260px, 72vw);
       }
 
       .section-head {
@@ -511,8 +556,12 @@
         gap: 12px;
       }
 
-      .latest-card {
-        padding: 28px 24px;
+      .latest-content {
+        padding: 28px 24px 26px;
+      }
+
+      .latest-visual {
+        padding: 0 24px 24px;
       }
 
       .latest-title {
@@ -639,22 +688,34 @@
           data-magazine-link
         >
 
-          <div class="latest-category">
-            PEOPLE · AUTUMN SPECIAL
+          <div class="latest-content">
+
+            <div class="latest-category">
+              PEOPLE · AUTUMN SPECIAL
+            </div>
+
+            <h3 class="latest-title">
+              CYAN PEOPLE — 가을, 시안의 사람들
+            </h3>
+
+            <p class="latest-description">
+              조금 느려진 계절 속에서 만난 여섯 명의 시안인.
+              일과 일상, 그리고 요즘의 작은 취향을 물었습니다.
+            </p>
+
+            <span class="latest-read">
+              READ MORE →
+            </span>
+
           </div>
 
-          <h3 class="latest-title">
-            CYAN PEOPLE — 가을, 시안의 사람들
-          </h3>
-
-          <p class="latest-description">
-            조금 느려진 계절 속에서 만난 여섯 명의 시안인.
-            일과 일상, 그리고 요즘의 작은 취향을 물었습니다.
-          </p>
-
-          <span class="latest-read">
-            READ MORE →
-          </span>
+          <div class="latest-visual">
+            <img
+              class="latest-image"
+              src="https://res.cloudinary.com/qucqug6s/image/upload/v1791006444/2026._%EA%B0%80%EC%9D%84_%ED%91%9C%EC%A7%80%EC%B9%B4%EB%93%9C.jpg"
+              alt="2026 Autumn CYAN PEOPLE"
+            >
+          </div>
 
         </a>
 
