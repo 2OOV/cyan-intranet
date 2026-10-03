@@ -186,32 +186,37 @@
     .latest-card {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 44%);
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1fr) 500px;
+      align-items: center;
+      gap: 48px;
+
+      min-height: 380px;
+      padding: 36px 42px;
+
       overflow: hidden;
-      border: 1px solid #dce3ed;
+
+      border: 1px solid #d9e1ec;
       border-top: 3px solid var(--group);
-      background: var(--soft-background);
+
+      background: #ffffff;
+
       transition:
         border-color 0.18s ease,
-        background 0.18s ease;
+        box-shadow 0.18s ease;
     }
 
     .latest-card:hover {
       border-color: #b9c7e3;
-      background: #f4f7fc;
+      box-shadow: 0 8px 24px rgba(30, 55, 95, 0.05);
     }
 
     .latest-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       min-width: 0;
-      padding: 38px 42px 36px;
+      padding: 4px 0;
     }
 
     .latest-category {
-      margin-bottom: 12px;
+      margin-bottom: 18px;
       color: var(--group);
       font-size: 10px;
       font-weight: 800;
@@ -221,15 +226,15 @@
     .latest-title {
       margin: 0;
       color: #172033;
-      font-size: 28px;
-      line-height: 1.3;
+      font-size: 30px;
+      line-height: 1.35;
       font-weight: 700;
       letter-spacing: -0.03em;
     }
 
     .latest-description {
-      max-width: 620px;
-      margin: 13px 0 0;
+      max-width: 520px;
+      margin: 18px 0 0;
       color: #667080;
       font-size: 13px;
       line-height: 1.8;
@@ -237,7 +242,7 @@
 
     .latest-read {
       display: inline-block;
-      margin-top: 24px;
+      margin-top: 30px;
       color: var(--group);
       font-size: 11px;
       font-weight: 800;
@@ -247,16 +252,15 @@
     .latest-visual {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       min-width: 0;
-      padding: 22px 24px 22px 0;
     }
 
     .latest-image {
       display: block;
       width: 100%;
+      max-width: 500px;
       height: auto;
-      max-height: 245px;
       object-fit: contain;
     }
 
@@ -265,7 +269,7 @@
     ========================= */
 
     .archive-section {
-      margin-top: 54px;
+      margin-top: 58px;
     }
 
     .archive-title {
@@ -521,18 +525,26 @@
        RESPONSIVE
     ========================= */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1050px) {
+      .latest-card {
+        grid-template-columns: minmax(0, 1fr) 44%;
+        gap: 34px;
+      }
+    }
+
+    @media (max-width: 820px) {
       .latest-card {
         grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 32px;
       }
 
       .latest-visual {
-        padding: 0 24px 28px;
+        justify-content: flex-start;
       }
 
       .latest-image {
-        width: 100%;
-        max-height: none;
+        max-width: 100%;
       }
     }
 
@@ -556,16 +568,21 @@
         gap: 12px;
       }
 
-      .latest-content {
-        padding: 28px 24px 26px;
-      }
-
-      .latest-visual {
-        padding: 0 24px 24px;
+      .latest-card {
+        min-height: 0;
+        padding: 26px 22px;
       }
 
       .latest-title {
         font-size: 23px;
+      }
+
+      .latest-description {
+        margin-top: 14px;
+      }
+
+      .latest-read {
+        margin-top: 22px;
       }
 
       .toolbar {
@@ -673,6 +690,7 @@
       <div class="latest-section">
 
         <div class="latest-label">
+
           <span class="latest-label-title">
             LATEST ISSUE
           </span>
@@ -680,7 +698,9 @@
           <span class="latest-date">
             2026.10.03
           </span>
+
         </div>
+
 
         <a
           class="latest-card"
@@ -709,12 +729,15 @@
 
           </div>
 
+
           <div class="latest-visual">
+
             <img
               class="latest-image"
               src="https://res.cloudinary.com/qucqug6s/image/upload/v1791006444/2026._%EA%B0%80%EC%9D%84_%ED%91%9C%EC%A7%80%EC%B9%B4%EB%93%9C.jpg"
               alt="2026 Autumn CYAN PEOPLE"
             >
+
           </div>
 
         </a>
@@ -736,6 +759,7 @@
         <div class="toolbar">
 
           <div class="filters">
+
             <button class="filter-button active" data-filter="ALL">
               ALL
             </button>
@@ -755,7 +779,9 @@
             <button class="filter-button" data-filter="CULTURE">
               CULTURE
             </button>
+
           </div>
+
 
           <form class="search-box" id="searchForm">
 
@@ -798,6 +824,7 @@
 
         </div>
 
+
         <div class="board-bottom">
           <span class="page-number">1</span>
         </div>
@@ -826,6 +853,7 @@
 
 
   <script>
+
     /*
       실제 노션 매거진 페이지가 완성되면
       url의 # 부분만 노션 주소로 교체.
@@ -842,6 +870,7 @@
       }
     ];
 
+
     const magazineList =
       document.getElementById("magazineList");
 
@@ -857,6 +886,7 @@
     const filterButtons =
       document.querySelectorAll(".filter-button");
 
+
     let activeFilter = "ALL";
     let searchKeyword = "";
 
@@ -870,6 +900,7 @@
 
       const keyword =
         searchKeyword.trim().toLowerCase();
+
 
       const filtered =
         [...magazines]
@@ -887,14 +918,18 @@
                 .includes(keyword);
 
             return categoryMatch && searchMatch;
+
           });
 
 
       if (!filtered.length) {
+
         magazineList.innerHTML = "";
         emptyState.style.display = "block";
+
         return;
       }
+
 
       emptyState.style.display = "none";
 
@@ -913,6 +948,7 @@
             </div>
 
             <div class="magazine-title-cell">
+
               <a
                 class="magazine-link"
                 href="${magazine.url}"
@@ -921,6 +957,7 @@
               >
                 ${magazine.title}
               </a>
+
             </div>
 
             <div class="magazine-date">
@@ -934,6 +971,7 @@
           </div>
 
         `).join("");
+
     }
 
 
@@ -944,14 +982,19 @@
         activeFilter =
           button.dataset.filter;
 
+
         filterButtons.forEach((item) => {
+
           item.classList.toggle(
             "active",
             item === button
           );
+
         });
 
+
         renderMagazines();
+
       });
 
     });
@@ -967,6 +1010,7 @@
           searchInput.value;
 
         renderMagazines();
+
       }
     );
 
@@ -979,6 +1023,7 @@
           searchInput.value;
 
         renderMagazines();
+
       }
     );
 
@@ -991,18 +1036,24 @@
           [...magazines]
             .sort((a, b) => b.id - a.id)[0];
 
+
         if (!latest || latest.url === "#") {
+
           event.preventDefault();
+
           return;
         }
+
 
         this.href = latest.url;
         this.target = "_blank";
         this.rel = "noopener noreferrer";
+
       });
 
 
     renderMagazines();
+
   </script>
 
 </body>
