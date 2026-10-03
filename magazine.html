@@ -974,14 +974,18 @@
 
             <div class="magazine-title-cell">
 
-              <a
-                class="magazine-link"
-                href="${magazine.url === "#" ? "javascript:void(0)" : magazine.url}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ${magazine.title}
-              </a>
+              ${
+                magazine.url === "#"
+                  ? `<span class="magazine-link">${magazine.title}</span>`
+                  : `<a
+                      class="magazine-link"
+                      href="${magazine.url}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      ${magazine.title}
+                    </a>`
+              }
 
             </div>
 
