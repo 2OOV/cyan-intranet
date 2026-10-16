@@ -12,7 +12,7 @@ const magazines = [
     feature: "CULTURE · HALLOWEEN SPECIAL",
     title: "[할로윈 특집] CYAN'S HALLOWEEN — 2026 HALLOWEEN SPECIAL",
     latestTitle: "CYAN'S HALLOWEEN🎃",
-    ctaText: "✦TRICK OR TREAT?👻✦",
+    ctaText: "✦TRICK OR TREAT?👻✦ →",
     ctaColor: "#8B5AA9",
     description: "오늘, 시안그룹은 정상 영업하지 않습니다.",
     date: "2026.10.16",
