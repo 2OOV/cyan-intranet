@@ -11,7 +11,9 @@ const magazines = [
     category: "CULTURE",
     feature: "CULTURE · HALLOWEEN SPECIAL",
     title: "[할로윈 특집] CYAN'S HALLOWEEN — 2026 HALLOWEEN SPECIAL",
-    latestTitle: "CYAN'S HALLOWEEN",
+    latestTitle: "CYAN'S HALLOWEEN🎃",
+    ctaText: "✦TRICK OR TREAT?👻✦",
+    ctaColor: "#8B5AA9",
     description: "오늘, 시안그룹은 정상 영업하지 않습니다.",
     date: "2026.10.16",
     views: 0,
@@ -85,6 +87,11 @@ function renderLatest() {
   latestImage.src = latest.image;
   latestImage.alt = latest.imageAlt;
   latestCard.href = latest.url;
+
+  // 최신호별 버튼 문구와 색상 (지정하지 않으면 기존 READ MORE 사용)
+  const latestRead = document.querySelector(".latest-read");
+  latestRead.textContent = latest.ctaText || "READ MORE →";
+  latestRead.style.color = latest.ctaColor || "";
 
 }
 
