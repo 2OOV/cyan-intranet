@@ -16,7 +16,7 @@ const magazines = [
     ctaColor: "#8B5AA9",
     description: "오늘, 시안그룹은 정상 영업하지 않습니다.",
     date: "2026.10.16",
-    views: 312,
+    views: 212,
     image: "https://res.cloudinary.com/qucqug6s/image/upload/v1792145014/2026_HALLOWEEN_%ED%91%9C%EC%A7%80.png",
     imageAlt: "CYAN MAGAZINE 2026 Halloween Special cover",
     url: "https://nifty-weather-a78.notion.site/2026-HALLOWEEN-SPECIAL-3fbc19373287800db4e3d28fd9b55d56"
@@ -29,7 +29,7 @@ const magazines = [
     latestTitle: "CYAN PEOPLE — 가을, 시안의 사람들",
     description: "조금 느려진 계절 속에서 만난 여섯 명의 시안인. 일과 일상, 그리고 요즘의 작은 취향을 물었습니다.",
     date: "2026.10.03",
-    views: 128,
+    views: 298,
     image: "https://res.cloudinary.com/qucqug6s/image/upload/v1791006444/2026._%EA%B0%80%EC%9D%84_%ED%91%9C%EC%A7%80%EC%B9%B4%EB%93%9C.jpg",
     imageAlt: "2026 Autumn CYAN PEOPLE",
     url: "https://nifty-weather-a78.notion.site/2026-AUTUMN-PEOPLE-3eec1937328780e680b3cb500fd03770?pvs=143"
