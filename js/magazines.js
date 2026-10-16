@@ -16,7 +16,7 @@ const magazines = [
     ctaColor: "#8B5AA9",
     description: "오늘, 시안그룹은 정상 영업하지 않습니다.",
     date: "2026.10.16",
-    views: 0,
+    views: 312,
     image: "https://res.cloudinary.com/qucqug6s/image/upload/v1792145014/2026_HALLOWEEN_%ED%91%9C%EC%A7%80.png",
     imageAlt: "CYAN MAGAZINE 2026 Halloween Special cover",
     url: "https://nifty-weather-a78.notion.site/2026-HALLOWEEN-SPECIAL-3fbc19373287800db4e3d28fd9b55d56"
