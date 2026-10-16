@@ -3,10 +3,22 @@
   새 매거진은 magazines 배열에 객체 하나만 추가하세요.
   가장 큰 id의 매거진이 LATEST ISSUE로 자동 표시됩니다.
   최신호는 feature, latestTitle, description, image, imageAlt, url을 입력해야 합니다.
-  할로윈 특집의 실제 링크와 표지 이미지 URL이 준비되면 id: 25로 추가하세요.
 */
 
 const magazines = [
+  {
+    id: 25,
+    category: "CULTURE",
+    feature: "CULTURE · HALLOWEEN SPECIAL",
+    title: "[할로윈 특집] CYAN'S HALLOWEEN — 2026 HALLOWEEN SPECIAL",
+    latestTitle: "CYAN'S HALLOWEEN",
+    description: "오늘, 시안그룹은 정상 영업하지 않습니다.",
+    date: "2026.10.16",
+    views: 0,
+    image: "https://res.cloudinary.com/qucqug6s/image/upload/v1792145014/2026_HALLOWEEN_%ED%91%9C%EC%A7%80.png",
+    imageAlt: "CYAN MAGAZINE 2026 Halloween Special cover",
+    url: "https://nifty-weather-a78.notion.site/2026-HALLOWEEN-SPECIAL-3fbc19373287800db4e3d28fd9b55d56"
+  },
   {
     id: 24,
     category: "PEOPLE",
